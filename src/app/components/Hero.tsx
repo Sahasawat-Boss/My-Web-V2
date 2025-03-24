@@ -98,7 +98,7 @@ const Hero = () => {
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.6 }}
                     >
-                        <span className="hover">Hi, I&apos;m Boss — a Full-stack Developer based in Thailand.</span>
+                        Hi, I&apos;m Boss — a Full-stack Developer based in Thailand.
                     </motion.span>
 
                     {/* ✅ Animated Contact Button with Scroll Function */}

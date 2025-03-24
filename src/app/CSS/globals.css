@@ -53,5 +53,10 @@ body {
     background: #1a1a1a;
     /* Match track color */
 }
-
 /* ============= CSS Scrollbar ============= */
+
+
+/*! ============= CSS Tailwind @Apply============= */
+.hover{
+    @apply hover:cursor-pointer hover:scale-105 transition duration-200 ease-in-out 
+}
