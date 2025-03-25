@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #00000f;
+        --foreground: #00021a;
+    }
+}
+
+body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ============= CSS Scrollbar ============= */
+/* For WebKit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 10px;
+    /* Adjust the width */
+    height: 10px;
+    /* Adjust the height for horizontal scrollbar */
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    /* Dark background */
+    border-radius: 5px;
+}
+
+/* Handle (draggable part) */
+::-webkit-scrollbar-thumb {
+    background: #444;
+    /* Dark grey handle */
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+    /* Slightly lighter for hover effect */
+}
+
+/* Scrollbar corner */
+::-webkit-scrollbar-corner {
+    background: #1a1a1a;
+    /* Match track color */
+}
+
+/* ============= CSS Gray Grid  BG============= */
+.grid-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: 40px 40px;
+    /* Adjust grid spacing */
+    background-image: linear-gradient(to right, rgba(139, 139, 139, 0.10) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(128, 128, 128, 0.10) 1px, transparent 1px);
+    z-index: -1;
+    /* Push to background */
+}
+
+
+/* ============= CSS floating ============= */
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.floating {
+    animation: floating 4s ease-in-out infinite;
+}
+
+/* ============= CSS glowing-button ============= */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 5px rgba(168, 85, 247, 0.3), 0 0 10px rgba(168, 85, 247, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 15px rgba(168, 85, 247, 0.6), 0 0 30px rgba(168, 85, 247, 0.4);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(168, 85, 247, 0.3), 0 0 10px rgba(168, 85, 247, 0.2);
+    }
+}
+
+/* ✅ Reusable Glowing Effect */
+.glowing-button {
+    animation: pulse-glow 2s infinite alternate;
+    transition: transform 0.3s ease-in-out;
+}
+
+.glowing-button:hover {
+    transform: scale(1.1);
+}
+
+/*! ================= CSS Tailwind @Apply================= */
+.hover {
+    @apply hover:cursor-pointer hover:scale-105 transition duration-200 ease-in-out
+}
+
+.hover110 {
+    @apply hover:cursor-pointer hover:scale-110 transition duration-200 ease-in-out
+}
+
+.hover125 {
+    @apply hover:cursor-pointer hover:scale-125 transition duration-200 ease-in-out
+}
+
+.gradient-text-purple {
+    @apply bg-gradient-to-br from-white via-purple-400 to-purple-600 bg-clip-text text-transparent
+}
+.gradient-text-gray {
+    @apply bg-gradient-to-bl from-white via-gray-400 to-gray-700 bg-clip-text text-transparent
+}

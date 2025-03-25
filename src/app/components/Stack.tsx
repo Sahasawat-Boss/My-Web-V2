@@ -38,10 +38,10 @@ const Stack = () => {
     const [tooltip, setTooltip] = useState<string | null>(null);
 
     return (
-        <div id="stack" className="w-full py-6 flex flex-col items-center relative">
+        <div id="stack" className="w-full py-10 flex flex-col items-center relative">
             {/* Section Title with Fade-in Animation */}
             <motion.h2
-                className="text-3xl md:text-4xl font-bold bg-gradient-to-bl from-white via-gray-500 to-white bg-clip-text text-transparent tracking-wide mb-8 transition-all duration-500 ease-in-out hover:scale-105"
+                className="text-3xl md:text-4xl font-bold bg-gradient-to-tl from-white to-gray-600 bg-clip-text text-transparent tracking-wide mb-8 transition-all duration-500 ease-in-out"
                 initial={{ opacity: 0, y: 0 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -52,7 +52,7 @@ const Stack = () => {
             {/* Stack Section with Floating Effect */}
             <motion.div
                 ref={ref}
-                className="flex flex-wrap justify-center gap-4 px-6 max-w-2xl relative"
+                className="flex flex-wrap justify-center gap-4 px-6 max-w-xl relative"
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1 }}

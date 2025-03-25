@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { FaLocationArrow } from "react-icons/fa";
 
@@ -15,7 +15,7 @@ const Hero = () => {
 
     // ✅ Scroll to Contact Section
     const handleScrollToProjects = () => {
-        const projectSection = document.querySelector("#Project4");
+        const projectSection = document.querySelector("#Project");
         if (projectSection) {
             projectSection.scrollIntoView({ behavior: "smooth", block: "start" });
         }
@@ -42,7 +42,7 @@ const Hero = () => {
                             <span className="text-gray-200/55 text-xl md:text-2xl xl:text-3xl font-semibold tracking-wider">
                                 Transform Visions into
                             </span>
-                            <span className="gradient-text-gray text-3xl md:text-4xl xl:text-5xl font-semibold tracking-wider">
+                            <span className="gradient-text-purple text-3xl md:text-4xl xl:text-5xl font-semibold tracking-wider">
                                 Digital Experiences
                             </span>
                         </div>
@@ -55,11 +55,11 @@ const Hero = () => {
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
                         {/* Profile Picture with Hover Effect */}
-                        <div className="relative mt-8 rounded-full overflow-hidden group">
+                        <div className="relative mt-8 rounded-full overflow-hidden group shadow-lg hover:shadow-purple-400">
                             <a href="https://github.com/Sahasawat-Boss" target="_blank" rel="noopener noreferrer">
                                 {/* Profile Image */}
                                 <Image
-                                    className="w-40 h-40 md:h-48 md:w-48 xl:h-52 xl:w-52 object-cover rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-5"
+                                    className="w-40 h-40 md:h-48 md:w-48 xl:h-52 xl:w-52 object-cover rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-5 "
                                     src="/Images/Profiles/profile-pic.jpg"
                                     alt="profile pic"
                                     width={150}
@@ -87,7 +87,7 @@ const Hero = () => {
 
                     {/* ✅ Animated Contact Button with Scroll Function */}
                     <motion.button
-                        className="flex w-fit items-center gap-2 rounded-full px-6 py-2 lg:text-lg hover:cursor-pointer border border-gray-500 shadow-lg hover:shadow-purple-400 transition-all"
+                        className="flex w-fit items-center gap-2 rounded-full px-6 py-2 lg:text-lg hover:cursor-pointer border border-gray-500 shadow-md hover:shadow-purple-400 transition-all glowing-button"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.85 }}
                         onClick={handleScrollToProjects} // Calls the scroll function
