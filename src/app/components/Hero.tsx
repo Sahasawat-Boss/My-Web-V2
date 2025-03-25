@@ -93,7 +93,7 @@ const Hero = () => {
                         onClick={handleScrollToProjects} // Calls the scroll function
                     >
                         View my works
-                        <FaLocationArrow className="mt-0.5 text-xs" />
+                        <FaLocationArrow className="mt-0.5 text-sm" />
                     </motion.button>
 
                     {/* ✅ Floating Tech Stack (Added at the Bottom) */}
