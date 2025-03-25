@@ -55,8 +55,35 @@ body {
 }
 /* ============= CSS Scrollbar ============= */
 
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
-/*! ============= CSS Tailwind @Apply============= */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+
+
+/*! ================= CSS Tailwind @Apply================= */
 .hover{
     @apply hover:cursor-pointer hover:scale-105 transition duration-200 ease-in-out 
+}
+.hover110{
+    @apply hover:cursor-pointer hover:scale-110 transition duration-200 ease-in-out 
+}
+.hover125{
+    @apply hover:cursor-pointer hover:scale-125 transition duration-200 ease-in-out 
+}
+
+.gradient-text-gray{
+    @apply bg-gradient-to-br from-white via-purple-400 to-purple-600 bg-clip-text text-transparent 
 }

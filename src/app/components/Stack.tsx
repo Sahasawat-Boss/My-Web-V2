@@ -1,120 +1,91 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import {
-    SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs,
-    SiTailwindcss, SiNodedotjs, SiExpress, SiPrisma, SiMongodb, SiPostgresql,
-    SiCloudinary, SiDocker, SiGithub, SiDbeaver, SiVercel, SiRailway, SiNetlify, SiNestjs, SiVuedotjs
+    SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss,
+    SiNodedotjs, SiExpress, SiPrisma, SiMongodb, SiPostgresql, SiCloudinary,
+    SiDocker, SiGithub, SiDbeaver, SiVercel, SiRailway, SiNetlify, SiNestjs, SiVuedotjs
 } from "react-icons/si";
-import { FaDatabase } from "react-icons/fa6";
 
-// Define Stack Categories
-const stackCategories = [
-    {
-        title: "Frontend",
-        stacks: [
-            { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
-            { name: "Tailwind CSS", icon: <SiTailwindcss className="text-blue-400" /> },
-            { name: "React", icon: <SiReact className="text-blue-400" /> },
-            { name: "Vue.js", icon: <SiVuedotjs className="text-green-400" /> },
-            { name: "TypeScript", icon: <SiTypescript className="text-blue-400" /> },
-            { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
-            { name: "CSS", icon: <SiCss3 className="text-blue-500" /> },
-            { name: "HTML", icon: <SiHtml5 className="text-orange-500" /> },
-        ],
-    },
-    {
-        title: "Backend and ORM",
-        stacks: [
-            { name: "Node.js", icon: <SiNodedotjs className="text-green-400" /> },
-            { name: "Express.js", icon: <SiExpress className="text-white" /> },
-            { name: "NestJS", icon: <SiNestjs className="text-[#ff5353]" /> },
-            { name: "Prisma", icon: <SiPrisma className="text-white" /> },
-        ],
-    },
-    {
-        title: "Database, DevOps and Services",
-        stacks: [
-            { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
-            { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-500" /> },
-            { name: "Neon Cloud", icon: <SiPostgresql className="text-cyan-400" /> },
-            { name: "Cloudinary", icon: <SiCloudinary className="text-blue-400" /> },
-            { name: "TiDB", icon: <FaDatabase className="text-purple-500" /> },
-            { name: "DBeaver", icon: <SiDbeaver className="text-blue-300" /> },
-            { name: "GitHub", icon: <SiGithub className="text-white" /> },
-            { name: "Docker", icon: <SiDocker className="text-blue-600" /> },
-            { name: "Vercel", icon: <SiVercel className="text-white" /> },
-            { name: "Railway", icon: <SiRailway className="text-gray-500" /> },
-            { name: "Netlify", icon: <SiNetlify className="text-blue-500" /> },
-        ],
-    },
+// Stack Data (Now Includes HTML, CSS, JavaScript)
+const techStacks = [
+    { name: "HTML", icon: <SiHtml5 className="text-orange-500 text-lg" /> },
+    { name: "CSS", icon: <SiCss3 className="text-blue-500 text-lg" /> },
+    { name: "JavaScript", icon: <SiJavascript className="text-yellow-400 text-lg" /> },
+    { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
+    { name: "React", icon: <SiReact className="text-blue-500" /> },
+    { name: "Vue.js", icon: <SiVuedotjs className="text-green-400 text-lg" /> },
+    { name: "Tailwind", icon: <SiTailwindcss className="text-teal-400" /> },
+    { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-500" /> },
+    { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
+    { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
+    { name: "Express.js", icon: <SiExpress className="text-gray-300" /> },
+    { name: "NestJS", icon: <SiNestjs className="text-[#ff4040]" /> },
+    { name: "Prisma", icon: <SiPrisma className="text-indigo-400" /> },
+    { name: "Cloudinary", icon: <SiCloudinary className="text-blue-400" /> },
+    { name: "Docker", icon: <SiDocker className="text-blue-600" /> },
+    { name: "GitHub", icon: <SiGithub className="text-white" /> },
+    { name: "DBeaver", icon: <SiDbeaver className="text-blue-400" /> },
+    { name: "Vercel", icon: <SiVercel className="text-white text-lg" /> },
+    { name: "Railway", icon: <SiRailway className="text-gray-200" /> },
+    { name: "Netlify", icon: <SiNetlify className="text-blue-500" /> },
 ];
-
-// Infinite Scroll Animation (Marquee Effect)
-const getScrollAnimation = (speed: number) => ({
-    animate: {
-        x: ["0%", "-100%"], // Move left continuously
-        transition: {
-            repeat: Infinity,
-            repeatType: "loop" as const,
-            duration: speed, // Adjust speed for each category
-            ease: "linear",
-        },
-    },
-});
 
 const Stack = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.20 });
+    const isInView = useInView(ref, { amount: 0.2 });
+    const [tooltip, setTooltip] = useState<string | null>(null);
 
     return (
-        <div id="stack" className="w-full overflow-hidden flex justify-center pt-16 mx-auto bg-black">
-            <div ref={ref} className="border border-white/20 backdrop-blur-3xl rounded-3xl py-6 text-white text-center w-md md:w-xl lg:w-2xl">
-                {/* Section Title */}
-                <motion.h2
-                    className="text-3xl mb-6 font-semibold tracking-wide"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6 }}
-                >
-                    Tech Stack
-                </motion.h2>
+        <div id="stack" className="w-full py-6 flex flex-col items-center relative">
+            {/* Section Title with Fade-in Animation */}
+            <motion.h2
+                className="text-3xl md:text-4xl font-bold bg-gradient-to-bl from-white via-gray-500 to-white bg-clip-text text-transparent tracking-wide mb-8 transition-all duration-500 ease-in-out hover:scale-105"
+                initial={{ opacity: 0, y: 0 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+                Tech Stack
+            </motion.h2>
 
-                {/* Loop Through Categories */}
-                {stackCategories.map((category, catIndex) => (
+            {/* Stack Section with Floating Effect */}
+            <motion.div
+                ref={ref}
+                className="flex flex-wrap justify-center gap-4 px-6 max-w-2xl relative"
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1 }}
+            >
+                {techStacks.map((tech, index) => (
                     <motion.div
-                        key={catIndex}
-                        className="mb-7"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.5, delay: catIndex * 0.5 }}
+                        key={tech.name}
+                        className="relative w-9 h-9 flex flex-col items-center justify-center rounded-full shadow-lg backdrop-blur-md border border-white/30 hover:bg-[#3f3f3f] transition-all cursor-pointer"
+                        animate={{ y: [-9, 9, -9] }}
+                        transition={{ duration: 2.5 + index * 0.5, repeat: Infinity, repeatType: "reverse" }}
+                        onMouseEnter={() => setTooltip(tech.name)}
+                        onMouseLeave={() => setTimeout(() => setTooltip(null), 1000)} // show tooltip 1s after hover
+                        onClick={() => setTooltip(tooltip === tech.name ? null : tech.name)}
                     >
-                        <h3 className="text-lg font-semibold mb-3">{category.title}</h3>
+                        <div className="text-xl">{tech.icon}</div>
 
-                        {/* Infinite Moving Stack (Seamless Scrolling) */}
-                        <div className="w-full relative overflow-hidden">
+                        {/* Tooltip on Hover and Click */}
+                        {tooltip === tech.name && (
                             <motion.div
-                                className="flex w-max flex-nowrap"
-                                {...getScrollAnimation(25 - catIndex * 2)} // Adjust speed per category
+                                className="absolute -top-10 left-1/2 transform -translate-x-1/2 px-3 py-1 bg-gray-800 text-white text-xs rounded-md shadow-md"
+                                initial={{ opacity: 0, y: -5 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -5 }}
+                                transition={{ duration: 0.3 }}
                             >
-                                {/* Duplicate stacks to create infinite effect */}
-                                {[...category.stacks, ...category.stacks].map((stack, index) => (
-                                    <div
-                                        key={index}
-                                        className="flex flex-col items-center space-y-1 p-2 rounded-lg hover:bg-white/20 transition-all duration-300 "
-                                    >
-                                        <div className="text-3xl">{stack.icon}</div>
-                                        <span className="text-xs">{stack.name}</span>
-                                    </div>
-                                ))}
+                                {tech.name}
                             </motion.div>
-                        </div>
+                        )}
                     </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </div>
     );
-}
+};
 
 export default Stack;

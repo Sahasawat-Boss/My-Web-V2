@@ -1,120 +1,107 @@
 "use client";
 
-import React, { useRef } from "react";
+import Image from "next/image";
+import React, { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import {
-    SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs,
-    SiTailwindcss, SiNodedotjs, SiExpress, SiPrisma, SiMongodb, SiPostgresql,
-    SiCloudinary, SiDocker, SiGithub, SiDbeaver, SiVercel, SiRailway, SiNetlify, SiNestjs, SiVuedotjs
-} from "react-icons/si";
-import { FaDatabase } from "react-icons/fa6";
+import { FaLocationArrow } from "react-icons/fa";
 
-// Define Stack Categories
-const stackCategories = [
-    {
-        title: "Frontend",
-        stacks: [
-            { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
-            { name: "Tailwind CSS", icon: <SiTailwindcss className="text-blue-400" /> },
-            { name: "React", icon: <SiReact className="text-blue-400" /> },
-            { name: "Vue.js", icon: <SiVuedotjs className="text-green-400" /> },
-            { name: "TypeScript", icon: <SiTypescript className="text-blue-400" /> },
-            { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
-            { name: "CSS", icon: <SiCss3 className="text-blue-500" /> },
-            { name: "HTML", icon: <SiHtml5 className="text-orange-500" /> },
-        ],
-    },
-    {
-        title: "Backend and ORM",
-        stacks: [
-            { name: "Node.js", icon: <SiNodedotjs className="text-green-400" /> },
-            { name: "Express.js", icon: <SiExpress className="text-white" /> },
-            { name: "NestJS", icon: <SiNestjs className="text-[#ff5353]" /> },
-            { name: "Prisma", icon: <SiPrisma className="text-white" /> },
-        ],
-    },
-    {
-        title: "Database, DevOps and Services",
-        stacks: [
-            { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
-            { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-500" /> },
-            { name: "Neon Cloud", icon: <SiPostgresql className="text-cyan-400" /> },
-            { name: "Cloudinary", icon: <SiCloudinary className="text-blue-400" /> },
-            { name: "TiDB", icon: <FaDatabase className="text-purple-500" /> },
-            { name: "DBeaver", icon: <SiDbeaver className="text-blue-300" /> },
-            { name: "GitHub", icon: <SiGithub className="text-white" /> },
-            { name: "Docker", icon: <SiDocker className="text-blue-600" /> },
-            { name: "Vercel", icon: <SiVercel className="text-white" /> },
-            { name: "Railway", icon: <SiRailway className="text-gray-500" /> },
-            { name: "Netlify", icon: <SiNetlify className="text-blue-500" /> },
-        ],
-    },
-];
+//details-comps
+import FloatingTech from "./details-comps/FloatingTech";
 
-// Infinite Scroll Animation (Marquee Effect)
-const getScrollAnimation = (speed: number) => ({
-    animate: {
-        x: ["0%", "-100%"], // Move left continuously
-        transition: {
-            repeat: Infinity,
-            repeatType: "loop" as const,
-            duration: speed, // Adjust speed for each category
-            ease: "linear",
-        },
-    },
-});
-
-const Stack = () => {
+const Hero = () => {
+    // 🔹 Detect when this section is in view
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.20 });
+    const isInView = useInView(ref, { amount: 0.5 });
+
+    // ✅ Scroll to Contact Section
+    const handleScrollToProjects = () => {
+        const projectSection = document.querySelector("#Project4");
+        if (projectSection) {
+            projectSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
 
     return (
-        <div id="stack" className="w-full overflow-hidden flex justify-center pt-16 mx-auto bg-black">
-            <div ref={ref} className="border border-white/20 backdrop-blur-3xl rounded-3xl py-6 text-white text-center w-md md:w-xl lg:w-2xl">
-                {/* Section Title */}
-                <motion.h2
-                    className="text-3xl mb-6 font-semibold tracking-wide"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6 }}
-                >
-                    Tech Stack
-                </motion.h2>
-
-                {/* Loop Through Categories */}
-                {stackCategories.map((category, catIndex) => (
+        <main id="hero" className="relative">
+            <motion.section
+                ref={ref}
+                className="relative flex justify-center items-center h-screen px-6 pt-32 pb-24 text-gray-200"
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+                <div className="z-10 flex flex-col items-center">
+                    {/* Animated Heading */}
                     <motion.div
-                        key={catIndex}
-                        className="mb-7"
-                        initial={{ opacity: 0, y: 20 }}
+                        className="flex gap-3"
+                        initial={{ opacity: 0, y: 30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.5, delay: catIndex * 0.5 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <h3 className="text-lg font-semibold mb-3">{category.title}</h3>
-
-                        {/* Infinite Moving Stack (Seamless Scrolling) */}
-                        <div className="w-full relative overflow-hidden">
-                            <motion.div
-                                className="flex w-max flex-nowrap"
-                                {...getScrollAnimation(25 - catIndex * 2)} // Adjust speed per category
-                            >
-                                {/* Duplicate stacks to create infinite effect */}
-                                {[...category.stacks, ...category.stacks].map((stack, index) => (
-                                    <div
-                                        key={index}
-                                        className="flex flex-col items-center space-y-1 p-2 rounded-lg hover:bg-white/20 transition-all duration-300 "
-                                    >
-                                        <div className="text-3xl">{stack.icon}</div>
-                                        <span className="text-xs">{stack.name}</span>
-                                    </div>
-                                ))}
-                            </motion.div>
+                        <div className="flex flex-col gap-2 justify-center items-center hover">
+                            <span className="text-gray-200/55 text-xl md:text-2xl xl:text-3xl font-semibold tracking-wider">
+                                Transform Visions into
+                            </span>
+                            <span className="gradient-text-gray text-3xl md:text-4xl xl:text-5xl font-semibold tracking-wider">
+                                Digital Experiences
+                            </span>
                         </div>
                     </motion.div>
-                ))}
-            </div>
-        </div>
-    );
-}
 
-export default Stack;
+                    {/* Animated Profile Picture */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                    >
+                        {/* Profile Picture with Hover Effect */}
+                        <div className="relative mt-8 rounded-full overflow-hidden group">
+                            <a href="https://github.com/Sahasawat-Boss" target="_blank" rel="noopener noreferrer">
+                                {/* Profile Image */}
+                                <Image
+                                    className="w-40 h-40 md:h-48 md:w-48 xl:h-52 xl:w-52 object-cover rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-5"
+                                    src="/Images/Profiles/profile-pic.jpg"
+                                    alt="profile pic"
+                                    width={150}
+                                    height={150}
+                                />
+                                {/* Hover Overlay */}
+                                <div className="absolute inset-0 flex items-center justify-center rounded-full bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                    <span className="text-white text-center font-semibold text-sm sm:text-lg">
+                                        View My GitHub
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                    </motion.div>
+
+                    {/* Animated Subtitle */}
+                    <motion.span
+                        className="mt-4 mb-14 rounded-xl bg-gray-600/50 text-center text-sm sm:text-base xl:text-lg px-3.5 py-1.5"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.6, delay: 0.6 }}
+                    >
+                        Hi, I&apos;m Boss - Developer based in Thailand.
+                    </motion.span>
+
+                    {/* ✅ Animated Contact Button with Scroll Function */}
+                    <motion.button
+                        className="flex w-fit items-center gap-2 rounded-full px-6 py-2 lg:text-lg hover:cursor-pointer border border-gray-500 shadow-lg hover:shadow-purple-400 transition-all"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.85 }}
+                        onClick={handleScrollToProjects} // Calls the scroll function
+                    >
+                        View my works
+                        <FaLocationArrow className="mt-0.5 text-xs" />
+                    </motion.button>
+
+                    {/* ✅ Floating Tech Stack (Added at the Bottom) */}
+                    <FloatingTech />
+                </div>
+            </motion.section>
+        </main>
+    );
+};
+
+export default Hero;

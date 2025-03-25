@@ -28,7 +28,7 @@ const handleScrollToServices = () => {
 const FloatingTech = () => {
     return (
         <div
-            className="absolute bottom-9 left-1/2 transform -translate-x-1/2 flex space-x-2 hover md:scale-125 cursor-pointer"
+            className="absolute bottom-10 lg:bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-2 hover110 cursor-pointer"
             onClick={handleScrollToServices} // Scroll to #services when clicked
         >
             {techStack.map((tech, index) => (
@@ -36,10 +36,10 @@ const FloatingTech = () => {
                     key={index}
                     className={`${tech.color}`}
                     animate={{
-                        y: [-12, 12, -12], // Floating effect up/down/starting position(and loop)
+                        y: [-15, 15, -15], // Floating effect up/down/starting position(and loop)
                     }}
                     transition={{
-                        duration: 2.5 + index * 0.5, // Asynchronous floating times base + index + delay
+                        duration: 2.5 + index * 0.3, // Asynchronous floating times base + index + delay
                         repeat: Infinity,
                         repeatType: "reverse",
                     }}
