@@ -1,6 +1,6 @@
 # My-Web-V2
 
-Website Preview: https://bossbsynth.com/
+Website Preview: https://boss-website-v2.vercel.app/
 
 ## 🚀 Overview
 My-Web-V2 is the second version of my personal portfolio website, built using **Next.js** and **Tailwind CSS**, deployed on **Vercel**. This site showcases my projects, skills, and experience as a full-stack developer.
