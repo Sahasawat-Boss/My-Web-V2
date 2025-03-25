@@ -36,7 +36,7 @@ const Services: FC = () => {
                     animate={isInView ? "visible" : "hidden"}
                     variants={fadeInVariants}
                 >
-                    <span>Service</span>
+                    <span>Services</span>
                 </motion.h2>
 
                 {/* Underline Animation */}
