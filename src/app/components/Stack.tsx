@@ -54,7 +54,7 @@ const stackCategories = [
 // Infinite Scroll Animation (Marquee Effect)
 const getScrollAnimation = (speed: number) => ({
     animate: {
-        x: ["15%", "-100%"], // Move left continuously
+        x: ["0%", "-100%"], // Move left continuously
         transition: {
             repeat: Infinity,
             repeatType: "loop" as const,
@@ -69,8 +69,8 @@ const Stack = () => {
     const isInView = useInView(ref, { amount: 0.20 });
 
     return (
-        <div id="stack" className="w-full overflow-hidden flex justify-center pt-16 px-6 bg-black">
-            <div ref={ref} className="border border-white/20 backdrop-blur-3xl rounded-3xl p-6 mx-auto text-white text-center max-w-5xl">
+        <div id="stack" className="w-full overflow-hidden flex justify-center pt-16 mx-auto bg-black">
+            <div ref={ref} className="border border-white/20 backdrop-blur-3xl rounded-3xl py-6 text-white text-center w-md md:w-xl lg:w-2xl">
                 {/* Section Title */}
                 <motion.h2
                     className="text-3xl mb-6 font-semibold tracking-wide"
@@ -88,7 +88,7 @@ const Stack = () => {
                         className="mb-7"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.8, delay: catIndex * 0.3 }}
+                        transition={{ duration: 0.5, delay: catIndex * 0.5 }}
                     >
                         <h3 className="text-lg font-semibold mb-3">{category.title}</h3>
 
@@ -96,10 +96,10 @@ const Stack = () => {
                         <div className="w-full relative overflow-hidden">
                             <motion.div
                                 className="flex w-max flex-nowrap"
-                                {...getScrollAnimation(20 - catIndex * 0.5)} // Adjust speed per category
+                                {...getScrollAnimation(25 - catIndex * 2)} // Adjust speed per category
                             >
                                 {/* Duplicate stacks to create infinite effect */}
-                                {[...category.stacks, ...category.stacks, ...category.stacks].map((stack, index) => (
+                                {[...category.stacks, ...category.stacks].map((stack, index) => (
                                     <div
                                         key={index}
                                         className="flex flex-col items-center space-y-1 p-2 rounded-lg hover:bg-white/20 transition-all duration-300 "

@@ -8,9 +8,9 @@ import { RiServiceFill } from "react-icons/ri";
 
 const navLinks = [
     { title: "About", path: "#hero", icon: <AiOutlineInfoCircle /> },
-    { title: "Stack", path: "#stack", icon: <FaLaptopCode /> },
-    { title: "Projects", path: "#Project", icon: <FaProjectDiagram /> },
     { title: "Services", path: "#services", icon: <RiServiceFill  /> },
+    { title: "Projects", path: "#Project", icon: <FaProjectDiagram /> },
+    { title: "Stack", path: "#stack", icon: <FaLaptopCode /> },
     { title: "Contact", path: "#Contact", icon: <FaEnvelope /> },
 ];
 
