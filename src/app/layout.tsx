@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Boss' Website V2",
-  description: "Boss' Website V2",
+  title: "Boss's Website | Developer",
+  description: "Welcome to Boss's Website. Explore my projects, skills, and portfolio.",
+  keywords: "Full-Stack Developer, Web Developer, Next.js, React, Boss, bossbsynth ",
 };
 
 export default function RootLayout({
