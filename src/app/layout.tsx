@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     title: "Boss's Website | Developer",
     description: "Explore my projects, skills, and portfolio.",
     url: "https://bossbsynth.com",
-    siteName: "Boss's Portfolio",
+    siteName: "Boss's Website",
     images: [
       {
         url: "https://boss-website-v2.vercel.app/preview.png",
         width: 1200,
         height: 630,
-        alt: "Boss Portfolio",
+        alt: "Boss Website",
       },
     ],
     type: "website",
