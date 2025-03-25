@@ -2,14 +2,15 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineClose, AiOutlineInfoCircle } from "react-icons/ai";
+import { FaLaptopCode, FaProjectDiagram, FaServicestack, FaEnvelope } from "react-icons/fa";
 
 const navLinks = [
-    { title: "About", path: "#hero" },
-    { title: "Stack", path: "#stack" },
-    { title: "Projects", path: "#Project4" },
-    { title: "Services", path: "#services" },
-    { title: "Contact", path: "#Contact" },
+    { title: "About", path: "#hero", icon: <AiOutlineInfoCircle /> },
+    { title: "Stack", path: "#stack", icon: <FaLaptopCode /> },
+    { title: "Projects", path: "#Project", icon: <FaProjectDiagram /> },
+    { title: "Services", path: "#services", icon: <FaServicestack /> },
+    { title: "Contact", path: "#Contact", icon: <FaEnvelope /> },
 ];
 
 const Nav = () => {
@@ -41,9 +42,9 @@ const Nav = () => {
                         <li key={index}>
                             <Link
                                 href={link.path}
-                                className="hover:text-purple-400 transition-all duration-300"
+                                className="flex items-center space-x-2 hover:text-purple-400 transition-all duration-300"
                             >
-                                {link.title}
+                                {link.icon} <span>{link.title}</span>
                             </Link>
                         </li>
                     ))}
@@ -53,9 +54,9 @@ const Nav = () => {
             {/* Mobile Menu Button */}
             <div
                 onClick={toggleNav}
-                className="sm:hidden fixed top-6 right-6 border border-white/70 rounded p-2 text-white cursor-pointer z-50"
+                className="sm:hidden fixed top-8 right-8 border border-white/70 rounded p-2 text-white cursor-pointer z-50"
             >
-                {navOpen ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
+                {navOpen ? <AiOutlineClose size={28} /> : <AiOutlineMenu size={28} />}
             </div>
 
             {/* Mobile Sidebar */}
@@ -69,9 +70,9 @@ const Nav = () => {
                             <Link
                                 href={link.path}
                                 onClick={(e) => handleSmoothScroll(e, link.path)}
-                                className="hover:text-purple-400 transition-all duration-300"
+                                className="flex items-center space-x-2 hover:text-purple-400 transition-all duration-300"
                             >
-                                {link.title}
+                                {link.icon} <span>{link.title}</span>
                             </Link>
                         </li>
                     ))}

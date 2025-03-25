@@ -5,7 +5,10 @@ import React, { useEffect, useRef } from "react";
 import { useMotionValue, useMotionTemplate, motion, animate, useInView } from "framer-motion";
 import { FaLocationArrow } from "react-icons/fa";
 
-const COLORS_TOP = ["#1E67C6", "#CE84CF", "#13FFAA", "#DD335C"];
+//details-comps
+import FloatingTech from "./details-comps/FloatingTech";
+
+const COLORS_TOP = ["#1E67C6", "#CE84CF", "#DD335C"];
 
 const Hero = () => {
     const color = useMotionValue(COLORS_TOP[0]);
@@ -36,7 +39,7 @@ const Hero = () => {
     };
 
     return (
-        <main id="hero">
+        <main id="hero" className="relative">
             <motion.section
                 ref={ref}
                 style={{ backgroundImage }}
@@ -54,10 +57,10 @@ const Hero = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
                         <div className="flex flex-col gap-2 justify-center items-center hover">
-                            <span className="text-white/40 text-2xl sm:text-3xl font-black">
-                                Transform Ideas into
+                            <span className="text-gray-200/55 text-xl md:text-2xl xl:text-3xl font-semibold tracking-wide">
+                                Transform Visions into
                             </span>
-                            <span className="bg-gradient-to-br from-white to-gray-600 bg-clip-text text-transparent text-4xl sm:text-5xl xl:text-6xl">
+                            <span className="bg-gradient-to-br from-white to-gray-600 bg-clip-text text-transparent text-3xl md:text-4xl xl:text-5xl font-semibold tracking-wide">
                                 Digital Experiences
                             </span>
                         </div>
@@ -74,7 +77,7 @@ const Hero = () => {
                             <a href="https://github.com/Sahasawat-Boss" target="_blank" rel="noopener noreferrer">
                                 {/* Profile Image */}
                                 <Image
-                                    className="md:w-60 w-40 h-40 md:h-60 object-cover rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-5"
+                                    className="w-40 h-40 md:h-52 md:w-52 xl:h-60 xl:w-60 object-cover rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-5"
                                     src="/Images/Profiles/profile-pic.jpg"
                                     alt="profile pic"
                                     width={150}
@@ -93,17 +96,17 @@ const Hero = () => {
 
                     {/* Animated Subtitle */}
                     <motion.span
-                        className="mt-4 mb-10 rounded-full bg-gray-600/50 text-center text-sm sm:text-lg px-5 py-1.5"
+                        className="mt-4 mb-14 rounded-lg bg-gray-600/50 text-center text-sm sm:text-base xl:text-lg px-3.5 py-1.5"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.6 }}
                     >
-                        Hi, I&apos;m Boss — a Full-stack Developer based in Thailand.
+                        Hi, I&apos;m Boss - a Developer based in Thailand.
                     </motion.span>
 
                     {/* ✅ Animated Contact Button with Scroll Function */}
                     <motion.button
-                        className="flex w-fit items-center gap-2 rounded-full px-5 py-2 text-lg"
+                        className="flex w-fit items-center gap-2 rounded-full px-6 py-2 lg:text-lg hover:cursor-pointer"
                         style={{
                             border,
                             boxShadow
@@ -115,8 +118,12 @@ const Hero = () => {
                         View my works
                         <FaLocationArrow className="mt-0.5 text-xs" />
                     </motion.button>
+
+                    {/* ✅ Floating Tech Stack (Added at the Bottom) */}
+                    <FloatingTech />
                 </div>
             </motion.section>
+
         </main>
     );
 }
