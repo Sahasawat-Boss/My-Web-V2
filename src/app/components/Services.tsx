@@ -28,7 +28,7 @@ const servicesList = [
 
 const fadeInVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 4, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 2, ease: "easeOut" } }
 };
 
 const Services: FC = () => {
@@ -53,17 +53,17 @@ const Services: FC = () => {
                         <motion.div
                             key={service.id}
                             className="flex items-start gap-6"
-                            initial={{ opacity: 0, x: -70 }}  // Initial state: Hidden & shifted left
+                            initial={{ opacity: 0, x: -80 }}  // Initial state: Hidden & shifted left
                             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }} // Animation trigger
-                            transition={{ duration: 1, delay: index * 0.2 }} // Smooth transition with stagger effect
+                            transition={{ duration: 1, delay: index * 0.7 }} // Smooth transition with stagger effect
                         >
 
-                            <span className="text-3xl font-bold text-purple-400">
+                            <span className="text-3xl text-purple-400 ">
                                 {service.id}
                             </span>
                             <div>
-                                <h3 className="text-xl font-bold mb-0.5">{service.title}</h3>
-                                <p className="text-gray-300 text-lg">{service.description}</p>
+                                <h3 className="text-xl font-bold mb-0.5 underline">{service.title}</h3>
+                                <p className="text-gray-200 text-base">{service.description}</p>
                             </div>
                         </motion.div>
                     ))}

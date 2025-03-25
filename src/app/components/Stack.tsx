@@ -3,13 +3,11 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
-    SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiOpenai, SiClaude,
+    SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs,
     SiTailwindcss, SiNodedotjs, SiExpress, SiPrisma, SiMongodb, SiPostgresql,
     SiCloudinary, SiDocker, SiGithub, SiDbeaver, SiVercel, SiRailway, SiNetlify, SiNestjs, SiVuedotjs
 } from "react-icons/si";
-import { VscVscodeInsiders } from "react-icons/vsc";
-import { FaDatabase, FaServer } from "react-icons/fa6";
-import { BsHexagonHalf } from "react-icons/bs";
+import { FaDatabase } from "react-icons/fa6";
 
 // Define Stack Categories
 const stackCategories = [
@@ -17,7 +15,7 @@ const stackCategories = [
         title: "Frontend",
         stacks: [
             { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
-            { name: "Tailwind CSS", icon: <SiTailwindcss className="text-blue-300" /> },
+            { name: "Tailwind CSS", icon: <SiTailwindcss className="text-blue-400" /> },
             { name: "React", icon: <SiReact className="text-blue-400" /> },
             { name: "Vue.js", icon: <SiVuedotjs className="text-green-400" /> },
             { name: "TypeScript", icon: <SiTypescript className="text-blue-400" /> },
@@ -31,12 +29,12 @@ const stackCategories = [
         stacks: [
             { name: "Node.js", icon: <SiNodedotjs className="text-green-400" /> },
             { name: "Express.js", icon: <SiExpress className="text-white" /> },
-            { name: "NestJS", icon: <SiNestjs className="text-red-500" /> },
+            { name: "NestJS", icon: <SiNestjs className="text-[#ff5353]" /> },
             { name: "Prisma", icon: <SiPrisma className="text-white" /> },
         ],
     },
     {
-        title: "Database and Services",
+        title: "Database, DevOps and Services",
         stacks: [
             { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
             { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-500" /> },
@@ -44,11 +42,6 @@ const stackCategories = [
             { name: "Cloudinary", icon: <SiCloudinary className="text-blue-400" /> },
             { name: "TiDB", icon: <FaDatabase className="text-purple-500" /> },
             { name: "DBeaver", icon: <SiDbeaver className="text-blue-300" /> },
-        ],
-    },
-    {
-        title: "DevOps",
-        stacks: [
             { name: "GitHub", icon: <SiGithub className="text-white" /> },
             { name: "Docker", icon: <SiDocker className="text-blue-600" /> },
             { name: "Vercel", icon: <SiVercel className="text-white" /> },
@@ -56,40 +49,31 @@ const stackCategories = [
             { name: "Netlify", icon: <SiNetlify className="text-blue-500" /> },
         ],
     },
-    {
-        title: "Code Editors & AI",
-        stacks: [
-            { name: "VS Code", icon: <VscVscodeInsiders className="text-blue-500" /> },
-            { name: "Cursor AI", icon: <BsHexagonHalf className="text-gray-300" /> },
-            { name: "GPT Plus", icon: <SiOpenai className="text-green-600" /> },
-            { name: "Claude 3.7", icon: <SiClaude className="text-orange-600" /> },
-        ],
-    }
 ];
 
-// Infinite Scroll Animation
-const scrollAnimation = {
+// Infinite Scroll Animation (Marquee Effect)
+const getScrollAnimation = (speed: number) => ({
     animate: {
-        x: ["0%", "-100%"], // Move from left to right
+        x: ["15%", "-100%"], // Move left continuously
         transition: {
             repeat: Infinity,
             repeatType: "loop" as const,
-            duration: 20, // Adjust speed
+            duration: speed, // Adjust speed for each category
             ease: "linear",
         },
     },
-};
+});
 
 const Stack = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.15 });
+    const isInView = useInView(ref, { amount: 0.20 });
 
     return (
-        <div id="stack" className="w-full flex justify-center pt-16 px-6 bg-black">
+        <div id="stack" className="w-full overflow-hidden flex justify-center pt-16 px-6 bg-black">
             <div ref={ref} className="border border-white/20 backdrop-blur-3xl rounded-3xl p-6 mx-auto text-white text-center max-w-5xl">
                 {/* Section Title */}
                 <motion.h2
-                    className="text-4xl font-bold mb-6"
+                    className="text-3xl mb-6 font-semibold tracking-wide"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
@@ -101,23 +85,27 @@ const Stack = () => {
                 {stackCategories.map((category, catIndex) => (
                     <motion.div
                         key={catIndex}
-                        className="mb-8"
+                        className="mb-7"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.5, delay: catIndex * 0.2 }}
+                        transition={{ duration: 0.8, delay: catIndex * 0.3 }}
                     >
-                        <h3 className="text-2xl font-semibold mb-4">{category.title}</h3>
+                        <h3 className="text-lg font-semibold mb-3">{category.title}</h3>
 
-                        {/* Infinite Moving Stack */}
-                        <div className="overflow-hidden w-full relative">
+                        {/* Infinite Moving Stack (Seamless Scrolling) */}
+                        <div className="w-full relative overflow-hidden">
                             <motion.div
-                                className="flex space-x-8 w-[200%]"
-                                {...scrollAnimation}
+                                className="flex w-max flex-nowrap"
+                                {...getScrollAnimation(20 - catIndex * 0.5)} // Adjust speed per category
                             >
-                                {[...category.stacks, ...category.stacks].map((stack, index) => (
-                                    <div key={index} className="flex flex-col items-center space-y-2 p-4 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300">
-                                        <div className="text-4xl">{stack.icon}</div>
-                                        <span className="text-xs sm:text-sm md:text-lg">{stack.name}</span>
+                                {/* Duplicate stacks to create infinite effect */}
+                                {[...category.stacks, ...category.stacks, ...category.stacks].map((stack, index) => (
+                                    <div
+                                        key={index}
+                                        className="flex flex-col items-center space-y-1 p-2 rounded-lg hover:bg-white/20 transition-all duration-300 "
+                                    >
+                                        <div className="text-3xl">{stack.icon}</div>
+                                        <span className="text-xs">{stack.name}</span>
                                     </div>
                                 ))}
                             </motion.div>
