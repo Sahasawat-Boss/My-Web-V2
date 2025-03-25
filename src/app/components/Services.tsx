@@ -1,7 +1,7 @@
 "use client";
 
-import { FC } from "react";
-import { motion } from "framer-motion";
+import { FC, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const servicesList = [
     { id: "01", title: "Workflow Design", description: "Streamline business processes for efficiency and productivity." },
@@ -21,20 +21,31 @@ const slideInVariants = {
 };
 
 const Services: FC = () => {
+    // ✅ Create a ref for tracking visibility
+    const ref = useRef(null);
+    const isInView = useInView(ref, { amount: 0.3, once: false });
+
     return (
-        <section id="services" className="text-white py-24 px-12 mx-auto max-w-3xl">
+        <section id="services" className="text-white py-24 px-12 mx-auto max-w-3xl" ref={ref}>
             <div className="max-w-3xl mx-auto">
 
                 {/* Section Title with Scroll Animation */}
                 <motion.h2
-                    className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-purple-400 to-gray-800 bg-clip-text text-transparent uppercase mb-8 "
+                    className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-purple-400 to-gray-800 bg-clip-text text-transparent uppercase"
                     initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: false, amount: 0.3 }}
+                    animate={isInView ? "visible" : "hidden"}
                     variants={fadeInVariants}
                 >
                     <span>Service</span>
                 </motion.h2>
+
+                {/* Underline Animation */}
+                <motion.div
+                    className="mt-2 w-[220px] h-0.5 bg-gradient-to-br from-gray-300 via-purple-400 to-purple-600 shadow-[0px_0px_10px_rgba(168,85,247,0.8)] mb-10 rounded-full"
+                    initial={{ scaleX: 0 }}
+                    animate={isInView ? { scaleX: 1 } : {}}
+                    transition={{ duration: 2, delay: 0.35, ease: "easeOut" }}
+                />
 
                 {/* Services Grid */}
                 <div className="grid lg:grid-cols-2 gap-8">
@@ -43,8 +54,7 @@ const Services: FC = () => {
                             key={service.id}
                             className="flex items-start gap-6"
                             initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: false, amount: 0.3 }}
+                            animate={isInView ? "visible" : "hidden"}
                             variants={slideInVariants}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                         >

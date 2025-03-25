@@ -21,7 +21,7 @@ const RecentProjects = () => {
     return (
         <section id="Project" ref={ref} className="py-10 px-6 flex flex-col items-center">
             <motion.h2
-                className="text-3xl md:text-4xl font-bold text-white mb-12 text-center"
+                className="text-3xl md:text-4xl font-bold text-white  text-center"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -29,6 +29,14 @@ const RecentProjects = () => {
                 <span className="gradient-text-gray">Projects fueled by {" "}</span>
                 <span className="gradient-text-purple">passion and skill.</span>
             </motion.h2>
+
+            {/* Underline Animation */}
+            <motion.div
+                className="mt-4 w-[510px] h-0.5 bg-gradient-to-r from-gray-300 via-purple-400 to-purple-600 shadow-[0px_0px_10px_rgba(168,85,247,0.8)] mb-10 rounded-full"
+                initial={{ scaleX: 0 }}
+                animate={isInView ? { scaleX: 1 } : {}}
+                transition={{ duration: 1.2, delay: 0.15, ease: "easeOut" }}
+            />
 
             {/* Responsive Grid Layout */}
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 w-full">
@@ -73,6 +81,21 @@ const RecentProjects = () => {
 "
                         imageSrc="/RecentProject/PIR/pir5.png"
                         liveLink=""
+                        techIcons={["Nextjs", "Tailwind", "JavaScript", "MongoDB", "Cloudinary"]}
+                    />
+                </motion.div>
+
+                {/* Right Side (Fades in from Right) */}
+                <motion.div
+                    variants={fadeInRight}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                >
+                    <ProjectCard
+                        title="AI-Summarizer"
+                        description="AI-Summarizer is a web application that extracts and summarizes web articles into concise, easy-to-read summaries using AI."
+                        imageSrc="/RecentProject/ai-sum/aisum3.png"
+                        liveLink="https://www.youtube.com/shorts/ylGrFObM-uw"
                         techIcons={["React", "Tailwind", "TypeScript"]}
                     />
                 </motion.div>
