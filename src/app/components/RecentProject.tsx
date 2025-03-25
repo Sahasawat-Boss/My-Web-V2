@@ -76,7 +76,7 @@ const RecentProjects = () => {
                     animate={isInView ? "visible" : "hidden"}
                 >
                     <ProjectCard
-                        title="Process Inspection Request System (PIR)"
+                        title="Process Inspection Request (PIR)"
                         description="PIR enables users to report issues with images, severity levels, and statuses, manage requests with real-time tracking, and generate reports in Excel and PDF.
 "
                         imageSrc="/RecentProject/PIR/pir5.png"
