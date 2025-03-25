@@ -35,7 +35,7 @@ const Nav = () => {
     return (
         <nav className="fixed w-full top-0 z-50 flex justify-center py-4 px-6 text-white">
             {/* Desktop Navbar */}
-            <div className="hidden md:flex items-center justify-center backdrop-blur-lg bg-black/55 border border-white/40 rounded-full px-6 py-3">
+            <div className="hidden sm:flex items-center justify-center backdrop-blur-lg bg-black/55 border border-white/50 rounded-xl px-8 py-3.5 hover">
                 <ul className="flex space-x-9">
                     {navLinks.map((link, index) => (
                         <li key={index}>
@@ -53,7 +53,7 @@ const Nav = () => {
             {/* Mobile Menu Button */}
             <div
                 onClick={toggleNav}
-                className="md:hidden fixed top-6 right-6 border border-white/70 rounded p-2 text-white cursor-pointer z-50"
+                className="sm:hidden fixed top-6 right-6 border border-white/70 rounded p-2 text-white cursor-pointer z-50"
             >
                 {navOpen ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
             </div>
@@ -61,7 +61,7 @@ const Nav = () => {
             {/* Mobile Sidebar */}
             <div
                 className={`fixed top-0 left-0 w-full h-full bg-black/90 transition-transform duration-300 ${navOpen ? "translate-x-0" : "-translate-x-full"
-                    } md:hidden`}
+                    } sm:hidden`}
             >
                 <ul className="flex flex-col items-center justify-center h-full space-y-10 text-3xl">
                     {navLinks.map((link, index) => (
