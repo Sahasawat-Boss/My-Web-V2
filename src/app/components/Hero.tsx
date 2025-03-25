@@ -77,7 +77,7 @@ const Hero = () => {
                             <a href="https://github.com/Sahasawat-Boss" target="_blank" rel="noopener noreferrer">
                                 {/* Profile Image */}
                                 <Image
-                                    className="w-40 h-40 md:h-52 md:w-52 xl:h-60 xl:w-60 object-cover rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-5"
+                                    className="w-40 h-40 md:h-48 md:w-48 xl:h-52 xl:w-52 object-cover rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-5"
                                     src="/Images/Profiles/profile-pic.jpg"
                                     alt="profile pic"
                                     width={150}
@@ -96,7 +96,7 @@ const Hero = () => {
 
                     {/* Animated Subtitle */}
                     <motion.span
-                        className="mt-4 mb-14 rounded-lg bg-gray-600/50 text-center text-sm sm:text-base xl:text-lg px-3.5 py-1.5"
+                        className="mt-4 mb-14 rounded-xl bg-gray-600/50 text-center text-sm sm:text-base xl:text-lg px-3.5 py-1.5"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.6 }}
