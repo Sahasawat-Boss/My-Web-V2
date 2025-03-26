@@ -14,7 +14,7 @@ export default function Port() {
     const images = [
         "/Images/project/Sone3.png", "/Images/project/Sone.png", "/Images/mocks/mock1.png", "/Images/mocks/mock2.png",
         "/Images/project/EC02.png", "/Images/project/aichat2.png", "/Images/project/bp1.png", "/Images/project/bp2.png",
-        "/Images/project/store1.png", "/Images/project/srollGall.png"
+        "/RecentProject/PIR/pir4.png", "/Images/project/Store1.png", "/Images/project/scrollgall.png"
     ];
 
     const openModal = (imageSrc: string) => {
