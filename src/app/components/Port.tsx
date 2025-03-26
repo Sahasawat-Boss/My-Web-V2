@@ -61,7 +61,7 @@ export default function Port() {
     }, []);
 
     return (
-        <section className="relative w-full flex flex-col items-center justify-center text-white px-6 py-16">
+        <section className="relative w-full flex flex-col items-center justify-center text-white px-6 pt-10">
 
             {/* Title with Animation */}
             <motion.div

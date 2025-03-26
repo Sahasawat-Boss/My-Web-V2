@@ -1,0 +1,21 @@
+@keyframes borderAnimation {
+    0% { border-image-source: linear-gradient(0deg, rgba(168,85,247,0.8), rgba(168,85,247,0)); }
+    25% { border-image-source: linear-gradient(90deg, rgba(168,85,247,0.8), rgba(168,85,247,0)); }
+    50% { border-image-source: linear-gradient(180deg, rgba(168,85,247,0.8), rgba(168,85,247,0)); }
+    75% { border-image-source: linear-gradient(270deg, rgba(168,85,247,0.8), rgba(168,85,247,0)); }
+    100% { border-image-source: linear-gradient(360deg, rgba(168,85,247,0.8), rgba(168,85,247,0)); }
+}
+
+.experience-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-border {
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    border-width: 2px;
+    border-image-slice: 1;
+    animation: borderAnimation 5s linear infinite;
+}

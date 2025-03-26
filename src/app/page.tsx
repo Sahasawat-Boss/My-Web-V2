@@ -6,6 +6,7 @@ import Stack from "./components/Stack";
 import Contact from "./components/Contact";
 import RecentProjects from "./components/RecentProject";
 import Port from "./components/Port";
+import Experience from "./components/Experience";
 
 export default function Home() {
   return (
@@ -15,6 +16,8 @@ export default function Home() {
       <Services />
       <RecentProjects />
       <Port/>
+
+      <Experience/>
       <Stack />
       <Contact />
       <Footer />

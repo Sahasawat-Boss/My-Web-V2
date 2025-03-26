@@ -2,15 +2,16 @@
 
 import React, { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineInfoCircle } from "react-icons/ai";
-import { FaLaptopCode, FaProjectDiagram, FaEnvelope } from "react-icons/fa";
+import { FaNetworkWired , FaProjectDiagram } from "react-icons/fa";
 import { RiServiceFill } from "react-icons/ri";
+import { MdOutlineContactSupport } from "react-icons/md";
 
 const navLinks = [
     { title: "About", path: "#hero", icon: <AiOutlineInfoCircle /> },
     { title: "Services", path: "#services", icon: <RiServiceFill /> },
     { title: "Projects", path: "#Project", icon: <FaProjectDiagram /> },
-    { title: "Stack", path: "#stack", icon: <FaLaptopCode /> },
-    { title: "Contact", path: "#Contact", icon: <FaEnvelope /> },
+    { title: "Experience", path: "#experience", icon: <FaNetworkWired  /> },
+    { title: "Contact", path: "#Contact", icon: <MdOutlineContactSupport /> },
 ];
 
 const Nav = () => {
