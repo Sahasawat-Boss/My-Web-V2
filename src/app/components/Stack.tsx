@@ -38,7 +38,7 @@ const Stack = () => {
     const [tooltip, setTooltip] = useState<string | null>(null);
 
     return (
-        <div id="stack" className="w-full py-12 flex flex-col items-center relative">
+        <div id="stack" className="w-full py-12 px-4 flex flex-col items-center relative">
             {/* Section Title with Fade-in Animation */}
             <motion.h2
                 className="text-3xl md:text-4xl font-bold bg-gradient-to-tl from-white to-gray-600 bg-clip-text text-transparent tracking-wide mb-8 transition-all duration-500 ease-in-out"
