@@ -30,7 +30,7 @@ const ProjectCard: React.FC<{
     techIcons: string[];
 }> = ({ title, description, imageSrc, liveLink, techIcons }) => {
     return (
-        <div className="relative bg-white/15 border border-white/20 rounded-xl p-6 w-96 mx-auto shadow-lg hover:shadow-purple-500/50 transition-shadow">
+        <div className="relative bg-white/15 border border-white/20 rounded-xl p-6 w-[340px] sm:w-96 shadow-lg hover:shadow-purple-500/50 transition-shadow">
             {/* ✅ Project Image with Overlay and Title on Hover */}
             <div className="relative w-full h-72 overflow-hidden rounded shadow-md group">
                 <img

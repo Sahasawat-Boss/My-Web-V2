@@ -28,13 +28,13 @@ const RecentProjects = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <span className="gradient-text-gray">Projects fueled by {" "}</span>
+                <span className="gradient-text-gray"><span className="text-4xl md:text-[43px] ">Projects</span> fueled by {" "}</span>
                 <span className="gradient-text-purple">passion and skill.</span>
             </motion.h2>
 
             {/* Underline Animation */}
             <motion.div
-                className="mt-4 w-[510px] h-0.5 bg-gradient-to-r from-gray-300 via-purple-400 to-purple-600 shadow-[0px_0px_10px_rgba(168,85,247,0.8)] mb-10 rounded-full"
+                className="mt-4 w-[300px] md:w-[530px] h-0.5 bg-gradient-to-r from-gray-300 via-purple-400 to-purple-600 shadow-[0px_0px_10px_rgba(168,85,247,0.8)] mb-10 rounded-full"
                 initial={{ scaleX: 0 }}
                 animate={isInView ? { scaleX: 1 } : {}}
                 transition={{ duration: 1.2, delay: 0.15, ease: "easeOut" }}
