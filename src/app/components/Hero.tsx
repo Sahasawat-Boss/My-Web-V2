@@ -11,7 +11,7 @@ import FloatingTech from "./details-comps/FloatingTech";
 const Hero = () => {
     // 🔹 Detect when this section is in view
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.5 });
+    const isInView = useInView(ref, { amount: 0.6 });
 
     // ✅ Scroll to Contact Section
     const handleScrollToProjects = () => {

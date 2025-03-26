@@ -54,7 +54,7 @@ const Nav = () => {
             {/* Mobile Menu Button */}
             <div
                 onClick={toggleNav}
-                className="sm:hidden fixed top-8 right-8 border border-white/70 rounded p-2 text-white hover:text-purple-400 hover:border-purple-400 cursor-pointer z-50 hover"
+                className="sm:hidden fixed top-5 right-5 border bg-black/50 border-white/70 rounded p-2 text-white hover:text-purple-400 hover:border-purple-400 cursor-pointer z-50 hover"
             >
                 {navOpen ? <AiOutlineClose size={28} /> : <AiOutlineMenu size={28} />}
             </div>

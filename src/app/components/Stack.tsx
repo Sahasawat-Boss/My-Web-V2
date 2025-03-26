@@ -34,11 +34,11 @@ const techStacks = [
 
 const Stack = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.2 });
+    const isInView = useInView(ref, { amount: 0.35 });
     const [tooltip, setTooltip] = useState<string | null>(null);
 
     return (
-        <div id="stack" className="w-full py-10 flex flex-col items-center relative">
+        <div id="stack" className="w-full py-12 flex flex-col items-center relative">
             {/* Section Title with Fade-in Animation */}
             <motion.h2
                 className="text-3xl md:text-4xl font-bold bg-gradient-to-tl from-white to-gray-600 bg-clip-text text-transparent tracking-wide mb-8 transition-all duration-500 ease-in-out"
@@ -60,14 +60,14 @@ const Stack = () => {
                 {techStacks.map((tech, index) => (
                     <motion.div
                         key={tech.name}
-                        className="relative w-10 h-10 flex flex-col items-center justify-center rounded-full shadow-lg backdrop-blur-md border border-white/30 hover:bg-[#3f3f3f] transition-all cursor-pointer"
+                        className="relative w-10 h-10 flex flex-col items-center justify-center rounded-full shadow-lg backdrop-blur-md border border-white/30 hover:bg-[#3f3f3f] transition-all hover110"
                         animate={{ y: [-9, 9, -9] }}
                         transition={{ duration: 2.5 + index * 0.5, repeat: Infinity, repeatType: "reverse" }}
                         onMouseEnter={() => setTooltip(tech.name)}
                         onMouseLeave={() => setTimeout(() => setTooltip(null), 1500)} // show tooltip 1.5s after hover
                         onClick={() => setTooltip(tooltip === tech.name ? null : tech.name)}
                     >
-                        <div className="text-2xl">{tech.icon}</div>
+                        <div className="text-2xl hover125">{tech.icon}</div>
 
                         {/* Tooltip on Hover and Click */}
                         {tooltip === tech.name && (

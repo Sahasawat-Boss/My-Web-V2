@@ -16,10 +16,12 @@ const fadeInRight = {
 
 const RecentProjects = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.25 }); // Trigger when 20% is in view
+    const isInView = useInView(ref, { amount: 0.2 }); // Trigger when 20% is in view
 
     return (
-        <section id="Project" ref={ref} className="py-10 px-6 flex flex-col items-center">
+        <section 
+        id="Project" 
+        ref={ref} className="pt-10 pb-16 px-6 flex flex-col items-center bg-black/35">
             <motion.h2
                 className="text-3xl md:text-4xl font-bold text-white  text-center"
                 initial={{ opacity: 0, y: 30 }}
