@@ -5,23 +5,30 @@ import { motion, useInView } from "framer-motion";
 import ProjectCard from "./details-comps/ProjectCard";
 
 const fadeInLeft = {
-    hidden: { opacity: 0, x: -80 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    hidden: { opacity: 0, x: -80, y: 45 }, // Moves from left & slightly below
+    visible: {
+        opacity: 1, x: 0, y: 0,
+        transition: { duration: 1, ease: "easeOut" }
+    }
 };
 
 const fadeInRight = {
-    hidden: { opacity: 0, x: 80 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    hidden: { opacity: 0, x: 80, y: 45 }, // Moves from right & slightly above
+    visible: {
+        opacity: 1, x: 0, y: 0,
+        transition: { duration: 1, ease: "easeOut" }
+    }
 };
+
 
 const RecentProjects = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { amount: 0.2 }); // Trigger when 20% is in view
 
     return (
-        <section 
-        id="Project" 
-        ref={ref} className="pt-10 pb-16 px-6 flex flex-col items-center bg-black/35">
+        <section
+            id="Project"
+            ref={ref} className="pt-10 pb-16 px-6 flex flex-col items-center bg-black/35">
             <motion.h2
                 className="text-3xl md:text-4xl font-bold text-white  text-center"
                 initial={{ opacity: 0, y: 30 }}
@@ -68,7 +75,7 @@ const RecentProjects = () => {
                         description="BSlip Checker verifies transaction details from Thai bank transfer slips by comparing uploaded slips with actual bank transaction records."
                         imageSrc="/RecentProject/bslip/bslip3.png"
                         liveLink="https://www.youtube.com/shorts/ylGrFObM-uw"
-                        techIcons={["Nextjs", "Tailwind", "TypeScript", "API", ]}
+                        techIcons={["Nextjs", "Tailwind", "TypeScript", "API",]}
                     />
                 </motion.div>
 

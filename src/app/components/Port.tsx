@@ -72,9 +72,10 @@ export default function Port() {
                 viewport={{ amount: 0.3, once: false }} // Runs every time when 20% is in viewport
             >
                 <h3
-                    className="text-3xl md:text-4xl gradient-text-gray font-semibold tracking-wider transition-all duration-500 ease-in-out"
+                    className="gradient-text-gray font-semibold tracking-wider transition-all duration-500 ease-in-out"
                 >
-                    Other Projects
+                    <span className="text-2xl md:text-3xl ">Other </span>
+                    <span className="text-3xl md:text-4xl ">Project</span>
                 </h3>
             </motion.div>
 

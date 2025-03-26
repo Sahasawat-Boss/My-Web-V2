@@ -55,7 +55,7 @@ const Hero = () => {
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
                         {/* Profile Picture with Hover Effect */}
-                        <div className="relative mt-8 rounded-full overflow-hidden group shadow-lg hover:shadow-purple-400">
+                        <div className="relative mt-8 rounded-full overflow-hidden group shadow-lg hover:shadow-purple-400 hover">
                             <a href="https://github.com/Sahasawat-Boss" target="_blank" rel="noopener noreferrer">
                                 {/* Profile Image */}
                                 <Image
@@ -87,8 +87,7 @@ const Hero = () => {
 
                     {/* ✅ Animated Contact Button with Scroll Function */}
                     <motion.button
-                        className="flex w-fit items-center gap-2 rounded-full px-6 py-2 lg:text-lg hover:cursor-pointer border border-gray-500 shadow-md hover:shadow-purple-400 transition-all glowing-button"
-                        whileHover={{ scale: 1.1 }}
+                        className="flex w-fit items-center gap-2 rounded-full px-6 py-2 lg:text-lg hover:cursor-pointer border border-gray-500 shadow-md hover:shadow-purple-400 transition-all glowing-button hover110"
                         whileTap={{ scale: 0.85 }}
                         onClick={handleScrollToProjects} // Calls the scroll function
                     >

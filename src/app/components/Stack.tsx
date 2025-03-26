@@ -41,12 +41,13 @@ const Stack = () => {
         <div id="stack" className="w-full py-12 px-4 flex flex-col items-center relative">
             {/* Section Title with Fade-in Animation */}
             <motion.h2
-                className="text-3xl md:text-4xl gradient-text-gray font-semibold tracking-wider mb-8 transition-all duration-500 ease-in-out"
+                className="gradient-text-gray font-semibold tracking-wider mb-8 transition-all duration-500 ease-in-out"
                 initial={{ opacity: 0, y: 0 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                Tech Stack
+                <span className="text-2xl md:text-3xl ">Tech </span>
+                <span className="text-3xl md:text-4xl ">Stack</span>
             </motion.h2>
 
             {/* Stack Section with Floating Effect */}
