@@ -41,7 +41,7 @@ const Stack = () => {
         <div id="stack" className="w-full py-12 px-4 flex flex-col items-center relative">
             {/* Section Title with Fade-in Animation */}
             <motion.h2
-                className="text-3xl md:text-4xl font-bold bg-gradient-to-tl from-white to-gray-600 bg-clip-text text-transparent tracking-wide mb-8 transition-all duration-500 ease-in-out"
+                className="text-3xl md:text-4xl gradient-text-gray font-semibold tracking-wider mb-8 transition-all duration-500 ease-in-out"
                 initial={{ opacity: 0, y: 0 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut" }}

@@ -29,7 +29,7 @@ const RecentProjects = () => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
                 <span className="gradient-text-gray"><span className="text-4xl md:text-[43px] ">Projects</span> fueled by {" "}</span>
-                <span className="gradient-text-purple">passion and skill.</span>
+                <span className="gradient-text-purple">passion and skill</span>
             </motion.h2>
 
             {/* Underline Animation */}

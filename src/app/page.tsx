@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import Stack from "./components/Stack";
 import Contact from "./components/Contact";
 import RecentProjects from "./components/RecentProject";
+import Port from "./components/Port";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <Services />
       <RecentProjects />
+      <Port/>
       <Stack />
       <Contact />
       <Footer />
