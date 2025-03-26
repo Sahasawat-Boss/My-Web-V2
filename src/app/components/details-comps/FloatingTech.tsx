@@ -28,7 +28,7 @@ const handleScrollToServices = () => {
 const FloatingTech = () => {
     return (
         <div
-            className="absolute bottom-10  lg:bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-2 hover110 cursor-pointer"
+            className="absolute bottom-10 lg:bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-2 hover110 cursor-pointer"
             onClick={handleScrollToServices} // Scroll to #services when clicked
         >
             {techStack.map((tech, index) => (
