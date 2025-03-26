@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FiExternalLink, FiPhone, FiMail } from "react-icons/fi";
+import { IoIosSend } from "react-icons/io";
 
 const Contact = () => {
     const ref = useRef(null);
@@ -17,13 +18,14 @@ const Contact = () => {
             <div className="flex flex-col justify-center items-center text-center">
                 {/* Title */}
                 <motion.h2
-                    className="text-2xl sm:text-3xl font-bold mb-6 hover"
+                    className="text-2xl sm:text-3xl font-bold mb-6"
                     initial={{ opacity: 0, y: -50 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
                     transition={{ duration: 0.8 }}
                 >
-                    Let's <span className="gradient-text-purple">Connect</span>
-                    <p className="text-gray-400 text-base mb-2">
+                    <span className="gradient-text-gray mr-1">Let's</span>
+                    <span className="gradient-text-purple">Connect</span>
+                    <p className="text-gray-400 text-base mb-2 tracking-wide">
                         Reach out for collaborations, inquiries, or just to say hello!
                     </p>
                 </motion.h2>
@@ -31,7 +33,7 @@ const Contact = () => {
 
                 {/* Contact Box */}
                 <motion.div
-                    className="bg-black/15 border border-white/15 w-fit px-8 py-6 rounded-2xl s text-left hover"
+                    className="bg-black/15 border border-white/15 w-fit px-12 py-7 rounded-2xl s text-left"
                     initial={{ opacity: 0, scale: 1.2 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
@@ -75,14 +77,16 @@ const Contact = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        className="flex justify-center mt-6"
+                        className="flex justify-center mt-7"
                     >
                         <a
                             href="mailto:sahasawat.rk@gmail.com"
-                            className="bg-blue-600 hover:bg-blue-500 text- px-6 py-3 rounded-lg text-lg font-semibold shadow-md transition-all hover"
+                            className="flex w-fit items-center gap-2 rounded-xl px-5 py-2 lg:text-lg hover:cursor-pointer  hover:bg-white/15 border border-gray-500 shadow-md hover:shadow-purple-400 transition-all glowing-button"
                         >
                             Send a Message
+                            <IoIosSend/>
                         </a>
+
                     </motion.div>
                 </motion.div>
             </div>

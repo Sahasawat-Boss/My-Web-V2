@@ -131,5 +131,5 @@ body {
     @apply bg-gradient-to-br from-white via-purple-400 to-purple-600 bg-clip-text text-transparent
 }
 .gradient-text-gray {
-    @apply bg-gradient-to-bl from-white via-gray-400 to-gray-700 bg-clip-text text-transparent
+    @apply bg-gradient-to-br from-white via-gray-300 to-gray-600 bg-clip-text text-transparent
 }
