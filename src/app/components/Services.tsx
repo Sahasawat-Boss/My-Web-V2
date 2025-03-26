@@ -44,7 +44,7 @@ const Services: FC = () => {
                     className="mt-2 w-[220px] h-0.5 bg-gradient-to-br from-gray-300 via-purple-400 to-purple-600 shadow-[0px_0px_10px_rgba(168,85,247,0.8)] mb-10 rounded-full"
                     initial={{ scaleX: 0 }}
                     animate={isInView ? { scaleX: 1 } : {}}
-                    transition={{ duration: 2, delay: 0.35, ease: "easeOut" }}
+                    transition={{ duration: 1.5, delay: 0.15, ease: "easeOut" }}
                 />
 
                 {/* Services Grid */}

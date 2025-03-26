@@ -25,7 +25,7 @@ const Hero = () => {
         <main id="hero" className="relative">
             <motion.section
                 ref={ref}
-                className="relative flex justify-center items-center h-screen px-6 pt-32 pb-24 text-gray-200"
+                className="relative flex justify-center items-center w-full h-screen px-6 pt-32 pb-24 text-gray-200"
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut" }}

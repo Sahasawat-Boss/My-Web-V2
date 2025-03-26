@@ -37,7 +37,7 @@ const RecentProjects = () => {
                 className="mt-4 w-[300px] md:w-[530px] h-0.5 bg-gradient-to-r from-gray-300 via-purple-400 to-purple-600 shadow-[0px_0px_10px_rgba(168,85,247,0.8)] mb-10 rounded-full"
                 initial={{ scaleX: 0 }}
                 animate={isInView ? { scaleX: 1 } : {}}
-                transition={{ duration: 1.2, delay: 0.15, ease: "easeOut" }}
+                transition={{ duration: 1, delay: 0.15, ease: "easeOut" }}
             />
 
             {/* Responsive Grid Layout */}

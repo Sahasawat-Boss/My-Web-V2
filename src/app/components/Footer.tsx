@@ -15,7 +15,7 @@ const Footer = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
         >
-            <div className="text-lg my-8 flex flex-col justify-center items-center gap-6">
+            <div className="w-full text-lg my-8 flex flex-col justify-center items-center gap-6">
 
                 {/* Social Links */}
                 <motion.ul
