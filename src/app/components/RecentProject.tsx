@@ -104,7 +104,7 @@ const RecentProjects = () => {
                         title="AI-Summarizer"
                         description="AI-Summarizer is a web application that extracts and summarizes web articles into concise, easy-to-read summaries using AI."
                         imageSrc="/RecentProject/ai-sum/aisum3.png"
-                        liveLink="https://www.youtube.com/shorts/ylGrFObM-uw"
+                        liveLink=""
                         techIcons={["React", "Tailwind", "TypeScript", "API",]}
                     />
                 </motion.div>
