@@ -8,7 +8,7 @@ import RecentProjects from "./components/RecentProject";
 
 export default function Home() {
   return (
-    <div>
+    <div className="max-w-screen overflow-hidden">
       <Nav />
       <Hero />
       <Services />
