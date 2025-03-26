@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import RecentProjects from "./components/RecentProject";
 import Port from "./components/Port";
 import Experience from "./components/Experience";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Experience/>
       <Stack />
       <Contact />
+      <ScrollToTop />
       <Footer />
     </div>
   );
