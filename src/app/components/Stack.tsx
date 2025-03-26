@@ -8,7 +8,6 @@ import {
     SiDocker, SiGithub, SiDbeaver, SiVercel, SiRailway, SiNetlify, SiNestjs, SiVuedotjs
 } from "react-icons/si";
 
-// Stack Data (Now Includes HTML, CSS, JavaScript)
 const techStacks = [
     { name: "HTML", icon: <SiHtml5 className="text-orange-500 text-lg" /> },
     { name: "CSS", icon: <SiCss3 className="text-blue-500 text-lg" /> },
@@ -61,19 +60,19 @@ const Stack = () => {
                 {techStacks.map((tech, index) => (
                     <motion.div
                         key={tech.name}
-                        className="relative w-10 h-10 flex flex-col items-center justify-center rounded-full shadow-lg backdrop-blur-md border border-white/30 hover:bg-[#3f3f3f] transition-all hover110"
+                        className="relative w-10 h-10 flex flex-col items-center justify-center rounded-full shadow-lg backdrop-blur-md border border-white/30 hover:bg-[#3f3f3f] transition-all cursor-pointer"
                         animate={{ y: [-9, 9, -9] }}
                         transition={{ duration: 2.5 + index * 0.5, repeat: Infinity, repeatType: "reverse" }}
                         onMouseEnter={() => setTooltip(tech.name)}
-                        onMouseLeave={() => setTimeout(() => setTooltip(null), 1500)} // show tooltip 1.5s after hover
-                        onClick={() => setTooltip(tooltip === tech.name ? null : tech.name)}
+                        onMouseLeave={() => setTooltip(null)} // Now it disappears when user moves away
+                        onClick={() => setTooltip(tooltip === tech.name ? null : tech.name)} // Show tooltip on mobile click
                     >
-                        <div className="text-2xl hover125">{tech.icon}</div>
+                        <div className="text-2xl">{tech.icon}</div>
 
                         {/* Tooltip on Hover and Click */}
                         {tooltip === tech.name && (
                             <motion.div
-                                className="absolute -top-10 left-1/2 transform -translate-x-1/2 px-3 py-1 bg-gray-800 text-white text-base rounded-md shadow-md"
+                                className="absolute -top-10 left-1/2 transform -translate-x-1/2 px-3 py-1 bg-gray-800 text-white text-xs rounded-md shadow-md"
                                 initial={{ opacity: 0, y: -5 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -5 }}

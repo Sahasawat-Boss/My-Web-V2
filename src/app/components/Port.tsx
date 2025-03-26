@@ -74,8 +74,8 @@ export default function Port() {
                 <h3
                     className="gradient-text-gray font-semibold tracking-wider transition-all duration-500 ease-in-out"
                 >
-                    <span className="text-2xl md:text-3xl ">Other </span>
-                    <span className="text-3xl md:text-4xl ">Project</span>
+                    <span className="text-2xl md:text-3xl">Featured </span>
+                    <span className="text-3xl md:text-4xl "> Projects</span>
                 </h3>
             </motion.div>
 
