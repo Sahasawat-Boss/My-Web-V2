@@ -2,6 +2,8 @@
 
 Website Preview: https://boss-website-v2.vercel.app/
 
+![image](https://github.com/user-attachments/assets/a192c967-2021-4fc2-a5e9-d90a9c0e6243)
+
 ## 🚀 Overview
 My-Web-V2 is the second version of my personal portfolio website, built using **Next.js** and **Tailwind CSS**, deployed on **Vercel**. This site showcases my projects, skills, and experience as a full-stack developer.
 
@@ -18,3 +20,5 @@ My-Web-V2 is the second version of my personal portfolio website, built using **
 
   On going....
 - **SEO Optimization:** `next-seo`, sitemap.xml, robots.txt
+
+![image](https://github.com/user-attachments/assets/3dfe69bd-2266-4d1d-8589-26681bd555be)
