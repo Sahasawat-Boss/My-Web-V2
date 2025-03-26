@@ -6,18 +6,20 @@ import {
     SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiOpenai, SiTypescript, SiJavascript,
     SiMongodb, SiCloudinary
 } from "react-icons/si";
+import { TbApi } from "react-icons/tb";
 
 // ✅ Map Tech Name to React Icons
 const iconMapping: Record<string, React.ReactElement> = {
-    React: <SiReact className="text-blue-400" size={21} />,
-    Nextjs: <SiNextdotjs className="text-white" size={21} />,
-    Tailwind: <SiTailwindcss className="text-teal-400" size={21} />,
-    Nodejs: <SiNodedotjs className="text-green-400" size={21} />,
-    OpenAI: <SiOpenai className="text-gray-300" size={21} />,
-    TypeScript: <SiTypescript className="text-blue-400" size={20} />,
-    JavaScript: <SiJavascript className="text-yellow-500" size={20} />,
-    MongoDB: <SiMongodb className="text-green-500" size={21} />,
-    Cloudinary: <SiCloudinary className="text-blue-400" size={21} />
+    React: <SiReact className="text-blue-400" size={20} />,
+    Nextjs: <SiNextdotjs className="text-white" size={20} />,
+    Tailwind: <SiTailwindcss className="text-teal-400" size={20} />,
+    Nodejs: <SiNodedotjs className="text-green-400" size={20} />,
+    OpenAI: <SiOpenai className="text-gray-300" size={20} />,
+    TypeScript: <SiTypescript className="text-blue-400" size={19} />,
+    JavaScript: <SiJavascript className="text-yellow-500" size={19} />,
+    MongoDB: <SiMongodb className="text-green-500" size={20} />,
+    Cloudinary: <SiCloudinary className="text-blue-400" size={20} />,
+    API: <TbApi className="text-[#d4d370]" size={21} />
 };
 
 const ProjectCard: React.FC<{
@@ -41,8 +43,8 @@ const ProjectCard: React.FC<{
                 <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 {/* 🟣 Centered Title on Hover */}
-                <span className="absolute inset-0 flex items-center justify-center text-black text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 ">
-                    <span className="bg-white/80 rounded-lg p-1.5">{title}</span>
+                <span className="absolute inset-0 flex items-center justify-center text-black text-md font-sans font-bold tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 ">
+                    <span className="bg-white/75 rounded-lg p-1.5">{title}</span>
                 </span>
             </div>
 
@@ -52,9 +54,13 @@ const ProjectCard: React.FC<{
 
             <div className="flex justify-between items-center">
                 {/* ✅ Tech Icons using React Icons */}
-                <div className="flex items-center gap-3 mt-4">
+                <div className="flex items-center mt-4">
                     {techIcons.map((tech, index) => (
-                        <div key={index} className="p-1 border border-white/20 rounded-full bg-black">
+                        <div
+                            key={index}
+                            className={`p-1.5 border border-white/30 rounded-full bg-black 
+                            ${index !== 0 ? "-ml-2" : ""} transition-all hover:scale-110`}
+                        >
                             {iconMapping[tech] || null}
                         </div>
                     ))}
@@ -68,14 +74,16 @@ const ProjectCard: React.FC<{
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group relative flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white rounded-lg 
-            bg-gradient-to-r from-purple-500  to-indigo-500 shadow-lg transition-all duration-300 
-            hover:scale-105 hover:shadow-purple-500/50 active:scale-95"
+                                bg-gradient-to-r from-purple-500  to-indigo-500 shadow-lg transition-all duration-300 
+                                hover:scale-105 hover:shadow-purple-500/50 active:scale-95"
                         >
                             View Demo
                             <FaLocationArrow className="text-sm transition-transform duration-300 group-hover:translate-x-1" />
                         </a>
                     ) : (
-                        <span className="text-gray-400 text-[15px] italic underline hover">🔒 Private Project</span>
+                        <span className="flex items-center justify-center text-gray-400 text-[13.5px] font-semibold italic hover">
+                            <span className="text-[17px] mr-1 mb-0.5">🔒</span>
+                            Private Project</span>
                     )}
                 </div>
 

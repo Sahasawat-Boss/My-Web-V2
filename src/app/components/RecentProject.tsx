@@ -41,7 +41,7 @@ const RecentProjects = () => {
             />
 
             {/* Responsive Grid Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5 w-fit">
                 {/* Left Side (Fades in from Left) */}
                 <motion.div
                     variants={fadeInLeft}
@@ -50,7 +50,7 @@ const RecentProjects = () => {
                 >
                     <ProjectCard
                         title="PureSmile Clinic"
-                        description="A modern, fully responsive, and user-friendly dental clinic website."
+                        description="A modern, easy-to-use, and fully responsive dental clinic website with simple booking and all the info patients need."
                         imageSrc="/RecentProject/puresmile/puresmile1.png"
                         liveLink="https://puresmile-clinic-bsynth-demo.vercel.app/"
                         techIcons={["React", "Tailwind", "TypeScript"]}
@@ -68,7 +68,7 @@ const RecentProjects = () => {
                         description="BSlip Checker verifies transaction details from Thai bank transfer slips by comparing uploaded slips with actual bank transaction records."
                         imageSrc="/RecentProject/bslip/bslip3.png"
                         liveLink="https://www.youtube.com/shorts/ylGrFObM-uw"
-                        techIcons={["Nextjs", "Tailwind", "TypeScript"]}
+                        techIcons={["Nextjs", "Tailwind", "TypeScript", "API", ]}
                     />
                 </motion.div>
 
@@ -98,7 +98,7 @@ const RecentProjects = () => {
                         description="AI-Summarizer is a web application that extracts and summarizes web articles into concise, easy-to-read summaries using AI."
                         imageSrc="/RecentProject/ai-sum/aisum3.png"
                         liveLink="https://www.youtube.com/shorts/ylGrFObM-uw"
-                        techIcons={["React", "Tailwind", "TypeScript"]}
+                        techIcons={["React", "Tailwind", "TypeScript", "API",]}
                     />
                 </motion.div>
             </div>
