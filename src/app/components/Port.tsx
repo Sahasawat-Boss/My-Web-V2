@@ -13,8 +13,8 @@ export default function Port() {
 
     const images = [
         "/Images/project/Sone3.png", "/Images/project/Sone.png", "/Images/mocks/mock1.png", "/Images/mocks/mock2.png",
-        "/Images/project/EC02.png", "/Images/project/aichat2.png", "/Images/project/bp1.png", "/Images/project/bp2.png",
-        "/RecentProject/PIR/pir4.png", "/Images/project/Store1.png", "/Images/project/scrollgall.png"
+        "/Images/project/EC02.png", "/Images/project/aichat2.png", "/RecentProject/PIR/pir2.png", "/RecentProject/PIR/pir4.png"
+        , "/Images/project/bp1.png", "/Images/project/bp2.png","/Images/project/Store1.png", "/Images/project/BF3.png", "/Images/project/BF1.png", "/Images/project/scrollgall.png"
     ];
 
     const openModal = (imageSrc: string) => {
@@ -45,17 +45,17 @@ export default function Port() {
             if (scrollContainerRef.current) {
                 const { scrollLeft, clientWidth, scrollWidth } = scrollContainerRef.current;
 
-                if (scrollLeft + clientWidth >= scrollWidth - 10) {
+                if (scrollLeft + clientWidth >= scrollWidth - 10) { // If at the end, reset the scroll to the start after a short delay (prevents abrupt jump)
                     setTimeout(() => {
                         if (scrollContainerRef.current) {
-                            scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" });
+                            scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" }); 
                         }
-                    }, 350);
+                    }, 200); // 200ms delay before resetting to create a smooth effect
                 } else {
-                    scrollContainerRef.current.scrollBy({ left: 400, behavior: "smooth" });
+                    scrollContainerRef.current.scrollBy({ left: 450, behavior: "smooth" });  // If not at the end, keep scrolling right by 450px smoothly
                 }
             }
-        }, 1500);
+        }, 1800); // Repeat this every 1.8 seconds
 
         return () => clearInterval(interval);
     }, []);
@@ -156,8 +156,8 @@ export default function Port() {
                     <Image
                         src={modalImage}
                         alt="Enlarged Project Preview"
-                        width={1000}
-                        height={600}
+                        width={1200}
+                        height={800}
                         className="shadow-xl"
                     />
                 </div>

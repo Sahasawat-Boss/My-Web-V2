@@ -1,25 +1,48 @@
 "use client";
 
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaBusinessTime, FaLaptopCode } from "react-icons/fa";
 import "../CSS/Experience.css";
 
-const experiences = [
+// Define the type for an experience item
+interface ExperienceItem {
+    title: string;
+    description: string;
+    icon: React.ReactNode; // ✅ Use React.ReactNode instead of JSX.Element
+}
+
+// Define experiences list
+const experiences: ExperienceItem[] = [
     {
         title: "Business Analyst",
-        description: "Worked with stakeholders to define software requirements and optimize business processes.",
-        icon: <FaBusinessTime className="text-blue-300 text-2xl" />,
-        animation: { hidden: { opacity: 0, x: -80 }, visible: { opacity: 1, x: 0 } },
+        description: "Partnered with stakeholders to gather and refine software requirements, design workflows and mockups, conduct thorough testing, and provide user training for a successful implementation.",
+        icon: <FaBusinessTime className="text-blue-400 text-2xl" />,
     },
     {
         title: "Freelance Developer",
-        description: "Designed and developed custom web applications for clients, focusing on modern design.",
+        description: "Designed and developed custom web apps for clients, prioritizing modern, user-friendly designs with responsiveness across devices.",
         icon: <FaLaptopCode className="text-purple-400 text-2xl" />,
-        animation: { hidden: { opacity: 0, x: 80 }, visible: { opacity: 1, x: 0 } },
     },
 ];
 
-const Experience = () => {
+// Experience Component
+const Experience: React.FC = () => {
+    const [modalContent, setModalContent] = useState<ExperienceItem | null>(null);
+    const modalRef = useRef<HTMLDialogElement>(null);
+
+    // Open modal
+    const openModal = (exp: ExperienceItem) => {
+        setModalContent(exp);
+        modalRef.current?.showModal();
+    };
+
+    // Close modal
+    const closeModal = () => {
+        modalRef.current?.close();
+        setModalContent(null);
+    };
+
     return (
         <section id="experience" className="pt-24 px-6 text-white">
             <div className="max-w-5xl mx-auto">
@@ -29,7 +52,6 @@ const Experience = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    viewport={{ amount: 0.3, once: false }}
                 >
                     <span className="gradient-text-purple">Career </span>
                     <span className="gradient-text-gray">Milestones</span>
@@ -40,28 +62,36 @@ const Experience = () => {
                     {experiences.map((exp, index) => (
                         <motion.div
                             key={index}
-                            className="relative flex items-center space-x-4 p-6 shadow-lg hover transition-all experience-card"
-                            initial="hidden"
-                            whileInView="visible"
-                            variants={exp.animation}
+                            className="relative flex items-center space-x-4 p-6 shadow-lg hover transition-all experience-card cursor-pointer"
+                            initial={{ opacity: 0, x: index % 2 === 0 ? -80 : 80 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, ease: "easeOut" }}
-                            viewport={{ amount: 0.3, once: false }}
+                            onClick={() => openModal(exp)}
                         >
-                            {/* Glowing Border Effect */}
-                            <div className="absolute inset-0 rounded-xl border-2 border-transparent experience-border"></div>
-
-                            {/* Icon */}
                             <div className="p-2 bg-white/15 rounded-full">{exp.icon}</div>
-
-                            {/* Content */}
                             <div>
-                                <h3 className="text-lg font-bold">{exp.title}</h3>
-                                <p className="text-gray-400 text-sm">{exp.description}</p>
+                                <h3 className="text-lg font-bold gradient-text-purple">{exp.title}</h3>
+                                <p className="text-gray-300 text-sm">{exp.description}</p>
                             </div>
                         </motion.div>
                     ))}
                 </div>
             </div>
+
+            {/* Modal for Detailed View */}
+            <dialog ref={modalRef} className="modal">
+                {modalContent && (
+                    <div className="text-center">
+                        <div className="flex justify-center items-center space-x-4">
+                            {modalContent.icon}
+                            <h3 className="text-xl font-bold gradient-text-purple">{modalContent.title}</h3>
+                        </div>
+                        <p className="text-gray-300 mt-2">{modalContent.description}</p>
+                        <button onClick={closeModal}>Close</button>
+                    </div>
+                )}
+            </dialog>
+
         </section>
     );
 };

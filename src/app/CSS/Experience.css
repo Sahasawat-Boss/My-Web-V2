@@ -1,21 +1,80 @@
 @keyframes borderAnimation {
-    0% { border-image-source: linear-gradient(0deg, rgba(168,85,247,0.8), rgba(168,85,247,0)); }
-    25% { border-image-source: linear-gradient(90deg, rgba(168,85,247,0.8), rgba(168,85,247,0)); }
-    50% { border-image-source: linear-gradient(180deg, rgba(168,85,247,0.8), rgba(168,85,247,0)); }
-    75% { border-image-source: linear-gradient(270deg, rgba(168,85,247,0.8), rgba(168,85,247,0)); }
-    100% { border-image-source: linear-gradient(360deg, rgba(168,85,247,0.8), rgba(168,85,247,0)); }
+    0% {
+        border-image-source: linear-gradient(0deg, #9333ea, #4f46e5);
+    }
+    25% {
+        border-image-source: linear-gradient(90deg, #9333ea, #4f46e5);
+    }
+    50% {
+        border-image-source: linear-gradient(180deg, #9333ea, #4f46e5);
+    }
+    75% {
+        border-image-source: linear-gradient(270deg, #9333ea, #4f46e5);
+    }
+    100% {
+        border-image-source: linear-gradient(360deg, #9333ea, #4f46e5);
+    }
 }
 
 .experience-card {
     position: relative;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
     overflow: hidden;
+    transition: transform 0.3s ease-in-out;
 }
 
-.experience-border {
+.experience-card::before {
+    content: "";
     position: absolute;
     inset: 0;
-    border-radius: 50px;
-    border-width: 2px;
+    border: 1px solid transparent;
+    border-radius: 10px;
     border-image-slice: 1;
-    animation: borderAnimation 5s linear infinite;
+    animation: borderAnimation 3s linear infinite;
+    pointer-events: none;
+}
+
+.experience-card:hover {
+    transform: scale(1.05);
+}
+
+
+/*//! Modal CSS =========================================================*/
+/* Center the dialog modal */
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(24, 24, 24, 1);
+    border-radius: 10px;
+    padding: 45px 25px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0px 4px 10px rgba(187, 138, 243, 0.3);
+    border: 0.5px solid #5a1996;
+}
+
+/* Center text and buttons */
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+/* Close button */
+dialog button {
+    display: block;
+    margin: 20px auto 0; 
+    padding: 7px 16px;
+    background-color: #9333ea; /* Purple */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+dialog button:hover {
+    background-color: #9d5dd4; /* Darker purple */
+    scale:110%;
 }
