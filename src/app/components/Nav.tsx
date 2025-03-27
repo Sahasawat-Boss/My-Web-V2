@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { AiOutlineMenu, AiOutlineClose, AiOutlineInfoCircle } from "react-icons/ai";
-import { FaNetworkWired , FaProjectDiagram } from "react-icons/fa";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { FaNetworkWired , FaProjectDiagram, FaHome  } from "react-icons/fa";
 import { RiServiceFill } from "react-icons/ri";
 import { MdOutlineContactSupport } from "react-icons/md";
 
 const navLinks = [
-    { title: "About", path: "#hero", icon: <AiOutlineInfoCircle /> },
+    { title: "Home", path: "#hero", icon: <FaHome  /> },
     { title: "Services", path: "#services", icon: <RiServiceFill /> },
     { title: "Projects", path: "#Project", icon: <FaProjectDiagram /> },
     { title: "Experience", path: "#experience", icon: <FaNetworkWired  /> },
@@ -62,7 +62,7 @@ const Nav = () => {
 
             {/* Mobile Sidebar */}
             <div
-                className={`fixed top-0 left-0 w-full h-full bg-black/90 transition-transform duration-300 ${navOpen ? "translate-x-0" : "-translate-x-full"
+                className={`fixed top-0 left-0 w-full h-full bg-black/90 transition-transform duration-300 ${navOpen ? "translate-x-0" : "translate-x-full"
                     } sm:hidden`}
             >
                 <ul className="flex flex-col items-center justify-center h-full space-y-10 text-3xl">

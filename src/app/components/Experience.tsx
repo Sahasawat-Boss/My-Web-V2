@@ -49,7 +49,7 @@ const Experience: React.FC = () => {
                 {/* Section Title */}
                 <motion.h2
                     className="text-3xl md:text-4xl font-semibold text-center"
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 35 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
@@ -63,7 +63,7 @@ const Experience: React.FC = () => {
                         <motion.div
                             key={index}
                             className="relative flex items-center space-x-4 p-6 shadow-lg hover transition-all experience-card cursor-pointer"
-                            initial={{ opacity: 0, x: index % 2 === 0 ? -80 : 80 }}
+                            initial={{ opacity: 0, x: index % 2 === 0 ? -85 : 85 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, ease: "easeOut" }}
                             onClick={() => openModal(exp)}
