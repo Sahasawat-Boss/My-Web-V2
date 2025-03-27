@@ -33,18 +33,18 @@ const Contact = () => {
 
                 {/* Contact Box */}
                 <motion.div
-                    className="bg-black/15 border border-white/15 w-fit px-12 py-7 rounded-2xl s text-left"
+                    className="bg-black/15 border border-white/15 w-fit px-10 py-7 rounded-2xl s text-left"
                     initial={{ opacity: 0, scale: 1.2 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
                     {/* Github */}
                     <div className="mb-6">
-                        <p className="text-gray-400 text-left gradient-text-purple ">GitHub</p>
+                        <p className="text-left text-purple-400/90">GitHub</p>
                         <a
                             href="https://github.com/Sahasawat-Boss "
                             target="_blank"
-                            className="flex items-center justify-left font-bold text- gap-2 hover:text-blue-400 transition-all"
+                            className="flex items-center justify-left text- gap-2 hover:text-blue-400 transition-all hover"
                         >
                             <FiExternalLink /> github.com/Sahasawat-Boss
                         </a>
@@ -52,10 +52,10 @@ const Contact = () => {
 
                     {/* Phone */}
                     <div className="mb-6">
-                        <p className="text-gray-400 text-left gradient-text-purple ">Phone</p>
+                        <p className="text-left text-purple-400/90">Phone</p>
                         <a
                             href="tel:0868684466"
-                            className="flex items-center justify-left font-bold text- gap-2 hover:text-blue-400 transition-all"
+                            className="flex items-center justify-left text- gap-2 hover:text-blue-400 transition-all hover"
                         >
                             <FiPhone /> 086-868-4466
                         </a>
@@ -63,10 +63,10 @@ const Contact = () => {
 
                     {/* Email */}
                     <div className="mb-6">
-                        <p className="text-gray-400 text-left gradient-text-purple ">Email</p>
+                        <p className="text-left text-purple-400/90">Email</p>
                         <a
                             href="mailto:sahasawat.rk@gmail.com"
-                            className="flex items-center justify-left font-bold text- gap-2 hover:text-blue-400 transition-all"
+                            className="flex items-center justify-left text- gap-2 hover:text-blue-400 transition-all hover"
                         >
                             <FiMail /> sahasawat.rk@gmail.com
                         </a>

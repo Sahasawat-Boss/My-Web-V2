@@ -24,7 +24,7 @@ const ScrollToTop = () => {
 
     return (
         <motion.button
-            className="fixed bottom-10 right-7 p-2 rounded-full border border-purple-400/80 shadow-lg hover:bg-purple-800/65 transition-all hover110"
+            className="fixed bottom-8 right-6 p-2 rounded-full border bg-black/65 border-purple-400/90 shadow-lg hover:bg-purple-800/65 transition-all hover110"
             onClick={scrollToTop}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: isVisible ? 0.75 : 0, scale: isVisible ? 1 : 0 }}

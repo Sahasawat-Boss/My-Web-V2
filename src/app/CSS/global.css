@@ -59,7 +59,7 @@ body {
     /* Match track color */
 }
 
-/* ============= CSS Gray Grid  BG============= */
+/*? ============= CSS Gray Grid  BG============= */
 .grid-background {
     position: fixed;
     top: 0;
@@ -68,14 +68,14 @@ body {
     height: 100vh;
     background-size: 40px 40px;
     /* Adjust grid spacing */
-    background-image: linear-gradient(to right, rgba(139, 139, 139, 0.10) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(128, 128, 128, 0.10) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(139, 139, 139, 0.13) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(128, 128, 128, 0.13) 1px, transparent 1px);
     z-index: -1;
     /* Push to background */
 }
 
 
-/* ============= CSS floating ============= */
+/*? ============= CSS floating ============= */
 @keyframes floating {
     0% {
         transform: translateY(0);
@@ -94,7 +94,7 @@ body {
     animation: floating 4s ease-in-out infinite;
 }
 
-/* ============= CSS glowing-button ============= */
+/*? ============= CSS glowing-button ============= */
 @keyframes pulse-glow {
     0% {
         box-shadow: 0 0 5px rgba(168, 85, 247, 0.3), 0 0 10px rgba(168, 85, 247, 0.2);

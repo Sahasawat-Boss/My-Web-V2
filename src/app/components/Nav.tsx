@@ -55,9 +55,9 @@ const Nav = () => {
             {/* Mobile Menu Button */}
             <div
                 onClick={toggleNav}
-                className="sm:hidden fixed top-8 right-8 border bg-black/50 border-white/70 rounded p-2 text-white hover:text-purple-400 hover:border-purple-400 cursor-pointer z-50 hover"
+                className="sm:hidden fixed top-8 right-8 p-2 border bg-black/50 border-white/50 rounded  text-white/90 hover:text-purple-400 hover:border-purple-400 cursor-pointer z-50 hover"
             >
-                {navOpen ? <AiOutlineClose size={28} /> : <AiOutlineMenu size={28} />}
+                {navOpen ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
             </div>
 
             {/* Mobile Sidebar */}

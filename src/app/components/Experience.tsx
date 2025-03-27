@@ -68,7 +68,7 @@ const Experience: React.FC = () => {
                             transition={{ duration: 0.5, ease: "easeOut" }}
                             onClick={() => openModal(exp)}
                         >
-                            <div className="p-2 bg-white/15 rounded-full">{exp.icon}</div>
+                            <div className="p-2 bg-white/15 rounded-full floating">{exp.icon}</div>
                             <div>
                                 <h3 className="text-lg font-bold gradient-text-purple">{exp.title}</h3>
                                 <p className="text-gray-300 text-sm">{exp.description}</p>
