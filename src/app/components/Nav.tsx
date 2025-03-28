@@ -43,9 +43,10 @@ const Nav = () => {
                         <li key={index}>
                             <button
                                 onClick={(e) => handleSmoothScroll(e, link.path)}
-                                className="flex items-center space-x-1 hover:text-purple-400 hover:underline transition-all duration-300 hover"
+                                className="flex items-center space-x-1 hover:text-purple-400/90 hover:underline transition-all duration-300 hover"
                             >
-                                <span className="text-sm opacity-80">{link.icon} </span><span>{link.title}</span>
+                                <span className="text-sm opacity-80 text-purple-300">{link.icon} </span>
+                                <span>{link.title}</span>
                             </button>
                         </li>
                     ))}
@@ -55,7 +56,7 @@ const Nav = () => {
             {/* Mobile Menu Button */}
             <div
                 onClick={toggleNav}
-                className="sm:hidden fixed top-8 right-8 p-2 border bg-black/50 border-white/50 rounded  text-white/90 hover:text-purple-400 hover:border-purple-400 cursor-pointer z-50 hover"
+                className="sm:hidden fixed top-8 right-8 p-2 border bg-black/50 border-white/50 rounded  text-white/90 hover:text-purple-400/90 hover:border-purple-400/90 z-50 hover"
             >
                 {navOpen ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
             </div>
@@ -72,7 +73,7 @@ const Nav = () => {
                                 onClick={(e) => handleSmoothScroll(e, link.path)}
                                 className="flex items-center space-x-2 hover:text-purple-400 transition-all duration-300 hover"
                             >
-                                <span className="text-2xl pr-2">{link.icon}</span>
+                                <span className="text-xl pr-1 text-purple-300 ">{link.icon}</span>
                                 <span>{link.title}</span>
                             </button>
                         </li>
