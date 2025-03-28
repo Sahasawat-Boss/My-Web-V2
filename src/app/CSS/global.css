@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    --background: #ffffff;    /* Light mode background (white) */
+    --foreground: #171717;    /* Light mode text or content color (dark gray) */
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #000016;
-        --foreground: #00021a;
+        --background: #000010;  /* Dark mode background (very dark blue/black) */
+        --foreground: #00021a;  /* Dark mode text/content color (dark blue) */
     }
 }
 
@@ -68,8 +68,8 @@ body {
     height: 100vh;
     background-size: 40px 40px;
     /* Adjust grid spacing */
-    background-image: linear-gradient(to right, rgba(139, 139, 139, 0.14) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(128, 128, 128, 0.14) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(139, 139, 139, 0.125) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(128, 128, 128, 0.125) 1px, transparent 1px);
     z-index: -1;
     /* Push to background */
 }
