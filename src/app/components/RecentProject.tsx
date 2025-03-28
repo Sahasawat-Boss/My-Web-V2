@@ -49,6 +49,22 @@ const RecentProjects = () => {
 
             {/* Responsive Grid Layout */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5 w-fit">
+
+                {/* Right Side (Fades in from Right) */}
+                <motion.div
+                    variants={fadeInRight}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                >
+                    <ProjectCard
+                        title="VueFlix"
+                        description="VueFlix is a fun and interactive movie preview demo where you can scroll through categories, explore different titles, and watch smooth trailer previews."
+                        imageSrc="/RecentProject/vueflix.png"
+                        liveLink="https://vueflix-demo.netlify.app/"
+                        techIcons={["Vue", "Tailwind",]}
+                    />
+                </motion.div>
+
                 {/* Left Side (Fades in from Left) */}
                 <motion.div
                     variants={fadeInLeft}
@@ -58,7 +74,7 @@ const RecentProjects = () => {
                     <ProjectCard
                         title="PureSmile Clinic"
                         description="A modern, easy-to-use, and fully responsive dental clinic website with simple booking and all the info patients need."
-                        imageSrc="/RecentProject/puresmile/puresmile1.png"
+                        imageSrc="/RecentProject/puresmile/psm.png"
                         liveLink="https://puresmile-clinic-bsynth-demo.vercel.app/"
                         techIcons={["React", "Tailwind", "TypeScript"]}
                     />
@@ -88,24 +104,9 @@ const RecentProjects = () => {
                         title="Process Inspection Request (PIR)"
                         description="PIR enables users to report issues with images, severity levels, and statuses, manage requests with real-time tracking, and generate reports in Excel and PDF.
 "
-                        imageSrc="/RecentProject/PIR/pir5.png"
+                        imageSrc="/RecentProject/pir.png"
                         liveLink=""
                         techIcons={["Nextjs", "Tailwind", "JavaScript", "MongoDB", "Cloudinary"]}
-                    />
-                </motion.div>
-
-                {/* Right Side (Fades in from Right) */}
-                <motion.div
-                    variants={fadeInRight}
-                    initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
-                >
-                    <ProjectCard
-                        title="AI-Summarizer"
-                        description="AI-Summarizer is a web application that extracts and summarizes web articles into concise, easy-to-read summaries using AI."
-                        imageSrc="/RecentProject/ai-sum/aisum3.png"
-                        liveLink=""
-                        techIcons={["React", "Tailwind", "TypeScript", "API",]}
                     />
                 </motion.div>
             </div>

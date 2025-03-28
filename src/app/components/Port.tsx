@@ -13,8 +13,9 @@ export default function Port() {
 
     const images = [
         "/Images/project/Sone3.png", "/Images/project/Sone.png", "/Images/mocks/mock1.png", "/Images/mocks/mock2.png",
-        "/Images/project/EC02.png", "/Images/project/aichat2.png", "/RecentProject/PIR/pir2.png", "/RecentProject/PIR/pir4.png"
-        , "/Images/project/bp1.png", "/Images/project/bp2.png","/Images/project/Store1.png", "/Images/project/BF3.png", "/Images/project/BF1.png", "/Images/project/scrollgall.png"
+        "/Images/project/EC02.png", "/Images/project/aichat2.png", "/Images/project/PIR/pir2.png", "/Images/project/PIR/pir4.png",
+        "/Images/project/aisum3.png"
+        , "/Images/project/bp1.png", "/Images/project/bp2.png", "/Images/project/Store1.png", "/Images/project/BF3.png", "/Images/project/BF1.png", "/Images/project/scrollgall.png"
     ];
 
     const openModal = (imageSrc: string) => {
@@ -48,7 +49,7 @@ export default function Port() {
                 if (scrollLeft + clientWidth >= scrollWidth - 10) { // If at the end, reset the scroll to the start after a short delay (prevents abrupt jump)
                     setTimeout(() => {
                         if (scrollContainerRef.current) {
-                            scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" }); 
+                            scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" });
                         }
                     }, 200); // 200ms delay before resetting to create a smooth effect
                 } else {

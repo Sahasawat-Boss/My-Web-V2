@@ -4,7 +4,7 @@ import React from "react";
 import { FaLocationArrow } from "react-icons/fa";
 import {
     SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiOpenai, SiTypescript, SiJavascript,
-    SiMongodb, SiCloudinary
+    SiMongodb, SiCloudinary, SiVuedotjs 
 } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 
@@ -19,7 +19,8 @@ const iconMapping: Record<string, React.ReactElement> = {
     JavaScript: <SiJavascript className="text-yellow-500" size={19} />,
     MongoDB: <SiMongodb className="text-green-500" size={20} />,
     Cloudinary: <SiCloudinary className="text-blue-400" size={20} />,
-    API: <TbApi className="text-[#d4d370]" size={21} />
+    API: <TbApi className="text-[#d4d370]" size={21} />,
+    Vue: <SiVuedotjs className="text-green-400" size={19} />,
 };
 
 const ProjectCard: React.FC<{
@@ -30,7 +31,7 @@ const ProjectCard: React.FC<{
     techIcons: string[];
 }> = ({ title, description, imageSrc, liveLink, techIcons }) => {
     return (
-        <div className="relative bg-white/15 border border-white/20 rounded-xl p-6 w-[340px] sm:w-96 shadow-lg hover:shadow-purple-500/50 transition-shadow">
+        <div className="relative bg-white/15 border border-white/20 rounded-xl px-4 py-6 w-[345px] sm:w-[360px] shadow-lg hover:shadow-purple-500/50 transition-shadow">
             {/* ✅ Project Image with Overlay and Title on Hover */}
             <div className="relative w-full h-72 overflow-hidden rounded shadow-md group">
                 <img
