@@ -15,8 +15,8 @@ const iconMapping: Record<string, React.ReactElement> = {
     Tailwind: <SiTailwindcss className="text-teal-400" size={20} />,
     Nodejs: <SiNodedotjs className="text-green-400" size={20} />,
     OpenAI: <SiOpenai className="text-gray-300" size={20} />,
-    TypeScript: <SiTypescript className="text-blue-400" size={19} />,
-    JavaScript: <SiJavascript className="text-yellow-500" size={19} />,
+    TypeScript: <SiTypescript className="text-blue-400" size={17} />,
+    JavaScript: <SiJavascript className="text-yellow-400" size={17} />,
     MongoDB: <SiMongodb className="text-green-500" size={20} />,
     Cloudinary: <SiCloudinary className="text-blue-400" size={20} />,
     API: <TbApi className="text-[#d4d370]" size={21} />,
@@ -82,8 +82,8 @@ const ProjectCard: React.FC<{
                             <FaLocationArrow className="text-sm transition-transform duration-300 group-hover:translate-x-1" />
                         </a>
                     ) : (
-                        <span className="flex items-center justify-center text-gray-400 text-[13.5px] font-semibold italic hover">
-                            <span className="text-[17px] mr-1 mb-0.5">🔒</span>
+                        <span className="flex items-center justify-center text-gray-400 text-[13.5px] font-semibold">
+                            <span className="text-[17px] mr-0.5 mb-0.5">🔒</span>
                             Private Project</span>
                     )}
                 </div>

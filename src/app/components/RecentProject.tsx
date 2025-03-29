@@ -61,7 +61,7 @@ const RecentProjects = () => {
                         description="VueFlix is a fun and interactive movie preview demo where you can scroll through categories, explore different titles, and watch smooth trailer previews."
                         imageSrc="/RecentProject/vueflix.png"
                         liveLink="https://vueflix-demo.netlify.app/"
-                        techIcons={["Vue", "Tailwind",]}
+                        techIcons={["Vue", "JavaScript", "Tailwind", ]}
                     />
                 </motion.div>
 
