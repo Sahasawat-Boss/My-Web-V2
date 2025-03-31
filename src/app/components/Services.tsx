@@ -1,4 +1,5 @@
 "use client";
+import ResponsiveMockup from "./details-comps/ResponsiveMockup";
 
 import { FC, useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -60,6 +61,16 @@ const Services: FC = () => {
                         </motion.div>
                     ))}
                 </div>
+
+                {/* Section Title with Scroll Animation */}
+                <motion.h2
+                    className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-gray-800 bg-clip-text text-transparent uppercase"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 2.2, ease: "easeInOut" }}
+                >
+                    <ResponsiveMockup />
+                </motion.h2>
             </div>
         </section>
     );

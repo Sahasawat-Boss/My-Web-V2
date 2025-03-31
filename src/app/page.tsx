@@ -22,6 +22,7 @@ export default function Home() {
 
       <Experience/>
       <Stack />
+      
       <Contact />
       <ScrollToTop />
       <Footer />
