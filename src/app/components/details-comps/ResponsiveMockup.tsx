@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export default function ResponsiveMockup() {
     return (
-        <section className="w-full flex justify-center py-10 px-4">
+        <section className="w-full flex justify-center py-10 px-4 shadow">
             <div className="relative w-[450px]">
                 {/* Laptop Mockup */}
                 <Image
                     src="/Images/res/res02.png"
                     alt="Laptop Mockup"
-                    width={1365}
-                    height={768}
+                    width={1385}
+                    height={788}
                     className="w-full h-auto rounded-xl shadow-lg"
                     priority
                 />
@@ -19,8 +19,8 @@ export default function ResponsiveMockup() {
                     <Image
                         src="/Images/res/res01.png"
                         alt="Mobile Mockup"
-                        width={256}
-                        height={512}
+                        width={276}
+                        height={532}
                         className="w-full h-auto rounded-xl shadow-xl"
                         priority
                     />
