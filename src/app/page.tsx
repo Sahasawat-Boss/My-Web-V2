@@ -8,6 +8,7 @@ import RecentProjects from "./components/RecentProject";
 import Port from "./components/Port";
 import Experience from "./components/Experience";
 import ScrollToTop from "./components/ScrollToTop";
+//import SelectCat from "./components/SelectCat";       <SelectCat/>
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Nav />
       <Hero />
       <Services />
+
       <RecentProjects />
       <Port/>
 
