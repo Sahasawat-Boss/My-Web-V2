@@ -31,7 +31,7 @@ const ProjectCard: React.FC<{
     techIcons: string[];
 }> = ({ title, description, imageSrc, liveLink, techIcons }) => {
     return (
-        <div className="relative bg-white/15 border border-white/20 rounded-xl px-4 py-6 w-[345px] sm:w-[360px] shadow-lg hover:shadow-purple-500/50 transition-shadow">
+        <div className="relative bg-white/15 border border-white/20 rounded-xl px-4 py-5 w-[345px] sm:w-[360px] shadow-lg hover:shadow-purple-500/50 transition-shadow">
             {/* ✅ Project Image with Overlay and Title on Hover */}
             <div className="relative w-full h-72 overflow-hidden rounded shadow-md group">
                 <img
@@ -51,7 +51,7 @@ const ProjectCard: React.FC<{
 
             {/* ✅ Project Details */}
             <h3 className="mt-6 text-lg font-bold text-white">{title}</h3>
-            <p className="mt-2 text-gray-300 text-sm">{description}</p>
+            <p className="mt-2 text-gray-300 text-sm indent-2">{description}</p>
 
             <div className="flex justify-between items-center">
                 {/* ✅ Tech Icons using React Icons */}
@@ -68,7 +68,7 @@ const ProjectCard: React.FC<{
                 </div>
 
                 {/* ✅ Check Live Site Button (Handles Private Projects) */}
-                <div className="mt-6 flex justify-between items-center">
+                <div className="mt-3.5 flex justify-between items-center">
                     {liveLink ? (
                         <a
                             href={liveLink}
