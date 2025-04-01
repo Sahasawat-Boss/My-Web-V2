@@ -15,7 +15,7 @@ export default function ResponsiveMockup() {
                 />
 
                 {/* Mobile Mockup - Positioned relative to the laptop */}
-                <div className="absolute right-[13px] sm:right-[25px] bottom-[-20px] sm:bottom-[-6px] w-[80px]">
+                <div className="absolute right-[10px] sm:right-[18px] bottom-[-20px] sm:bottom-[-6px] w-[70px] md:w-[85px]">
                     <Image
                         src="/Images/res/mobile.png"
                         alt="Mobile Mockup"
@@ -27,7 +27,7 @@ export default function ResponsiveMockup() {
                 </div>
 
                 {/* Tablet Mockup - Positioned relative to the laptop */}
-                <div className="absolute left-[5px] sm:left-[-10px] bottom-[-6px] sm:bottom-[6px] w-[180px]">
+                <div className="absolute left-[2px] sm:left-[-10px] bottom-[-6px] sm:bottom-[6px]  w-[130px] md:w-[180px]">
                     <Image
                         src="/Images/res/ipad.png"
                         alt="Tablet Mockup"
