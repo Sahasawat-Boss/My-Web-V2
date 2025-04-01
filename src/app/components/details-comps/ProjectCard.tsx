@@ -34,7 +34,7 @@ const ProjectCard: React.FC<{
     return (
         <div className="relative bg-white/15 border border-white/20 rounded-xl px-4 py-5 w-[345px] sm:w-[360px] shadow-lg hover:shadow-purple-500/50 transition-shadow">
             {/* ✅ Project Image with Overlay and Title on Hover */}
-            <div className="relative w-full h-72 overflow-hidden rounded shadow-md group">
+            <div className="relative w-full h-68 overflow-hidden rounded shadow-md group">
                 <img
                     src={imageSrc}
                     alt={title}

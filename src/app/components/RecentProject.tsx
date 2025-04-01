@@ -74,7 +74,7 @@ const RecentProjects = () => {
                     <ProjectCard
                         title="VueFlix"
                         description="VueFlix is a fun and interactive movie preview demo where you can scroll through categories, explore different titles, and watch smooth trailer previews."
-                        imageSrc="/RecentProject/vueflix.png"
+                        imageSrc="/RecentProject/vf.png"
                         liveLink="https://vueflix-demo.netlify.app/"
                         techIcons={["Vue", "Tailwind", "JavaScript",]}
                     />
