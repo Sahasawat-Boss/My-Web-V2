@@ -59,7 +59,7 @@ const RecentProjects = () => {
                     <ProjectCard
                         title="SoulScroll"
                         description="SoulScroll is a fantasy story told through immersive visuals, music, and text. Discover a mythical world chapter by chapter."
-                        imageSrc="/RecentProject/SS.png"
+                        imageSrc="/RecentProject/ss.png"
                         liveLink="https://soulscroll-bossbsynth.netlify.app/"
                         techIcons={["Nuxt", "Tailwind", "JavaScript"]}
                     />
