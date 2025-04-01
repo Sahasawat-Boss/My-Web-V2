@@ -50,6 +50,21 @@ const RecentProjects = () => {
             {/* Responsive Grid Layout */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5 w-fit">
 
+                {/* Left Side (Fades in from Left) */}
+                <motion.div
+                    variants={fadeInLeft}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                >
+                    <ProjectCard
+                        title="SoulScroll"
+                        description="SoulScroll is a fantasy story told through immersive visuals, music, and text. Discover a mythical world chapter by chapter."
+                        imageSrc="/RecentProject/SS.png"
+                        liveLink="https://soulscroll-bossbsynth.netlify.app/"
+                        techIcons={["Nuxt", "Tailwind", "JavaScript"]}
+                    />
+                </motion.div>
+
                 {/* Right Side (Fades in from Right) */}
                 <motion.div
                     variants={fadeInRight}
@@ -61,7 +76,7 @@ const RecentProjects = () => {
                         description="VueFlix is a fun and interactive movie preview demo where you can scroll through categories, explore different titles, and watch smooth trailer previews."
                         imageSrc="/RecentProject/vueflix.png"
                         liveLink="https://vueflix-demo.netlify.app/"
-                        techIcons={["Vue", "JavaScript", "Tailwind", ]}
+                        techIcons={["Vue", "Tailwind", "JavaScript",]}
                     />
                 </motion.div>
 

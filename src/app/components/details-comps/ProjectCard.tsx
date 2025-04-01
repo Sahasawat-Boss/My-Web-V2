@@ -4,7 +4,7 @@ import React from "react";
 import { FaLocationArrow } from "react-icons/fa";
 import {
     SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiOpenai, SiTypescript, SiJavascript,
-    SiMongodb, SiCloudinary, SiVuedotjs 
+    SiMongodb, SiCloudinary, SiVuedotjs, SiNuxtdotjs 
 } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 
@@ -21,6 +21,7 @@ const iconMapping: Record<string, React.ReactElement> = {
     Cloudinary: <SiCloudinary className="text-blue-400" size={20} />,
     API: <TbApi className="text-[#d4d370]" size={21} />,
     Vue: <SiVuedotjs className="text-green-400" size={19} />,
+    Nuxt: <SiNuxtdotjs  className="text-green-400" size={19} />,
 };
 
 const ProjectCard: React.FC<{
@@ -50,12 +51,12 @@ const ProjectCard: React.FC<{
             </div>
 
             {/* ✅ Project Details */}
-            <h3 className="mt-6 text-lg font-bold text-white">{title}</h3>
-            <p className="mt-2 text-gray-300 text-sm indent-2">{description}</p>
+            <h3 className="mt-3 text-lg font-bold text-white">{title}</h3>
+            <p className="mt-1 text-gray-300 text-sm indent-2.5">{description}</p>
 
             <div className="flex justify-between items-center">
                 {/* ✅ Tech Icons using React Icons */}
-                <div className="flex items-center mt-4">
+                <div className="flex items-center mt-3">
                     {techIcons.map((tech, index) => (
                         <div
                             key={index}
