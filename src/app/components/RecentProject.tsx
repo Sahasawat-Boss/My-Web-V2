@@ -23,7 +23,7 @@ const fadeInRight = {
 
 const RecentProjects = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.2 }); // Trigger when 20% is in view
+    const isInView = useInView(ref, { amount: 0.15 }); // Trigger when 15% is in view
 
     return (
         <section

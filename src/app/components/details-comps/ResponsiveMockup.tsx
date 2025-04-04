@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ResponsiveMockup() {
     return (
-        <section className="w-full flex justify-center py-10 px-4 shadow">
+        <section className="w-full flex justify-center pt-8 px-4 shadow">
             <div className="relative w-[380px]">
                 {/* Laptop Mockup */}
                 <Image
