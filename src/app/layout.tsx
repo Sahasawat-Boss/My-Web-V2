@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./CSS/global.css";
 
+import MusicPlayer from "./components/details-comps/MusicPlayer";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -60,7 +62,10 @@ export default function RootLayout({
         <div className="grid-background"></div>
 
         {/* ✅ Main Content */}
+
+        <MusicPlayer/>
         <div className="relative z-10">{children}</div>
+        
       </body>
     </html>
   );
