@@ -48,7 +48,7 @@ const RecentProjects = () => {
             />
 
             {/* Responsive Grid Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5 w-fit">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-5 w-fit">
 
 
                 {/* Right Side (Fades in from Right) */}
