@@ -1,20 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { FaNetworkWired , FaProjectDiagram, FaHome  } from "react-icons/fa";
+import { FaNetworkWired, FaProjectDiagram, FaHome } from "react-icons/fa";
 import { RiServiceFill } from "react-icons/ri";
 import { MdOutlineContactSupport } from "react-icons/md";
 
 const navLinks = [
-    { title: "Home", path: "#hero", icon: <FaHome  /> },
+    { title: "Home", path: "#hero", icon: <FaHome /> },
     { title: "Services", path: "#services", icon: <RiServiceFill /> },
     { title: "Projects", path: "#Project", icon: <FaProjectDiagram /> },
-    { title: "Experience", path: "#experience", icon: <FaNetworkWired  /> },
+    { title: "Experience", path: "#experience", icon: <FaNetworkWired /> },
     { title: "Contact", path: "#Contact", icon: <MdOutlineContactSupport /> },
 ];
 
 const Nav = () => {
+    const [activeSection, setActiveSection] = useState<string>("");
     const [navOpen, setNavOpen] = useState(false);
 
     const toggleNav = () => {
@@ -34,6 +35,24 @@ const Nav = () => {
         closeNav();
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            navLinks.forEach((link) => {
+                const section = document.querySelector(link.path);
+                if (section) {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 120 && rect.bottom >= 120) {
+                        setActiveSection(link.path);
+                    }
+                }
+            });
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+
     return (
         <nav className="fixed w-full top-0 z-50 flex justify-center py-4 px-6 text-white">
             {/* Desktop Navbar */}
@@ -43,10 +62,19 @@ const Nav = () => {
                         <li key={index}>
                             <button
                                 onClick={(e) => handleSmoothScroll(e, link.path)}
-                                className="flex items-center space-x-1 hover:text-purple-400/90 hover:underline transition-all duration-300 hover"
+                                className="flex items-center space-x-1 hover:text-purple-400/90 hover: transition-all duration-300 hover"
                             >
-                                <span className="text-sm opacity-80 text-purple-300">{link.icon} </span>
-                                <span>{link.title}</span>
+                                <span
+                                    className={`text-sm opacity-80 ${activeSection === link.path ? "text-purple-400" : "text-purple-300"}`}
+                                >
+                                    {link.icon}
+                                </span>
+                                <span
+                                    className={`${activeSection === link.path ? "text-purple-400 " : ""}`}
+                                >
+                                    {link.title}
+                                </span>
+
                             </button>
                         </li>
                     ))}
@@ -56,7 +84,7 @@ const Nav = () => {
             {/* Mobile Menu Button */}
             <div
                 onClick={toggleNav}
-                className="sm:hidden fixed top-8 right-8 p-2 border bg-black/50 border-white/50 rounded  text-white/90 hover:text-purple-400/90 hover:border-purple-400/90 z-50 hover"
+                className="sm:hidden fixed top-8 right-8 p-2 border bg-black/50 border-white/50 rounded  text-white/90 hover:text-purple-400/90 hover:border-purple-400/90 z-50 active:scale-70 hover:cursor-pointer"
             >
                 {navOpen ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
             </div>
@@ -73,8 +101,15 @@ const Nav = () => {
                                 onClick={(e) => handleSmoothScroll(e, link.path)}
                                 className="flex items-center space-x-2 hover:text-purple-400 transition-all duration-300 hover"
                             >
-                                <span className="text-xl pr-1 text-purple-300 ">{link.icon}</span>
-                                <span>{link.title}</span>
+                                <span
+                                    className={`text-xl pr-1 ${activeSection === link.path ? "text-purple-400" : "text-purple-300"}`}
+                                >
+                                    {link.icon}
+                                </span>
+                                <span className={`${activeSection === link.path ? "text-purple-400 " : ""}`}>
+                                    {link.title}
+                                </span>
+
                             </button>
                         </li>
                     ))}
