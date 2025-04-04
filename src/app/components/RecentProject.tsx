@@ -50,6 +50,22 @@ const RecentProjects = () => {
             {/* Responsive Grid Layout */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5 w-fit">
 
+
+                {/* Right Side (Fades in from Right) */}
+                <motion.div
+                    variants={fadeInRight}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                >
+                    <ProjectCard
+                        title="DailyDrip"
+                        description="DailyDrip brings the warmth of a real coffee shop online — with beautiful design, animations, and smooth user experience."
+                        imageSrc="/RecentProject/DD.png"
+                        liveLink="https://daily-drip-coffee-cafe.vercel.app/"
+                        techIcons={["Nextjs", "Tailwind", "TypeScript"]}
+                    />
+                </motion.div>
+
                 {/* Left Side (Fades in from Left) */}
                 <motion.div
                     variants={fadeInLeft}
