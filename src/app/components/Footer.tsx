@@ -46,7 +46,7 @@ const Footer = () => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1.2, delay: 0.2 }}
                 >
-                    Created by Boss © 2025. All rights reserved.
+                    Created by BossBSynth © 2025. All rights reserved.
                 </motion.p>
             </div>
         </motion.footer>
