@@ -77,7 +77,7 @@ const ProjectCard: React.FC<{
                             rel="noopener noreferrer"
                             className="group relative flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white rounded-lg 
                                 bg-gradient-to-r from-purple-500  to-indigo-500 shadow-lg transition-all duration-300 
-                                hover:scale-105 hover:shadow-purple-500/50 active:scale-95"
+                                hover:scale-105 hover:shadow-purple-500/50 active:scale-80"
                         >
                             View Demo
                             <FaLocationArrow className="text-sm transition-transform duration-300 group-hover:translate-x-1" />

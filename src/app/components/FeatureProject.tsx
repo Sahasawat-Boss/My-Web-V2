@@ -6,7 +6,7 @@ import Image from "next/image";
 import Modal from "react-modal";
 import { AiOutlineLeft, AiOutlineRight, AiOutlineClose } from "react-icons/ai";
 
-export default function Port() {
+export default function FeatureProject() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [modalImage, setModalImage] = useState("");
     const scrollContainerRef = useRef<HTMLDivElement>(null);

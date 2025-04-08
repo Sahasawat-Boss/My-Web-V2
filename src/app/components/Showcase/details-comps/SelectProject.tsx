@@ -1,13 +1,15 @@
 "use client";
+
 import { useState } from "react";
-import RecentProjects from "../RecentProject";
-import Port from "../Port";
+import RecentProjects from "./RecentProject";
+import LandingPage from "./LandingPage";
+import WebAppProjects from "./WebAppProjects";
 
 export default function SelectProject() {
     const [category, setCategory] = useState<"all" | "landing" | "web-app">("all");
 
     return (
-        <div className="text-center my-10">
+        <div className="text-center">
             {/* Filter Buttons */}
             <div className="flex justify-center gap-4 mb-6 flex-wrap">
                 {[
@@ -17,9 +19,9 @@ export default function SelectProject() {
                 ].map(({ label, value }) => (
                     <button
                         key={value}
-                        className={`px-4 py-2 rounded-full transition-colors duration-200 ${category === value
-                                ? "bg-blue-800 text-white"
-                                : "bg-gray-200 text-gray-800"
+                        className={`px-4.5 py-1.5 rounded-full duration-200  lg:text-lg hover border border-gray-500 shadow-md hover:shadow-purple-400  bg-gradient-to-r from-purple-500  to-indigo-500 transition-all  ${category === value
+                            ? " text-white"
+                            : "bg-none text-white/50"
                             }`}
                         onClick={() => setCategory(value as "all" | "landing" | "web-app")}
                     >
@@ -30,14 +32,9 @@ export default function SelectProject() {
 
             {/* Display Section */}
             <div className="max-w-6xl mx-auto px-4">
-                {category === "all" && (
-                    <>
-                        <RecentProjects />
-                        <Port />
-                    </>
-                )}
-                {category === "landing" && <RecentProjects />}
-                {category === "web-app" && <Port />}
+                {category === "all" && <RecentProjects />}
+                {category === "landing" && <LandingPage />}
+                {category === "web-app" && <WebAppProjects />}
             </div>
         </div>
     );

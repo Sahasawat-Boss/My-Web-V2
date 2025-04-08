@@ -2,9 +2,9 @@ import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Stack from "./components/Stack";
 import Contact from "./components/Contact";
-import RecentProjects from "./components/RecentProject";
-import Port from "./components/Port";
 import Experience from "./components/Experience";
+import FeatureProject from "./components/FeatureProject";
+import ShowcaseProject from "./components/Showcase/ShowcaseProject";
 //import SelectCat from "./components/SelectCat";       <SelectCat/>
 
 export default function Home() {
@@ -14,12 +14,12 @@ export default function Home() {
       <Hero />
       <Services />
 
-      <RecentProjects />
-      <Port/>
+      <ShowcaseProject />
+      <FeatureProject />
 
-      <Experience/>
+      <Experience />
       <Stack />
-      
+
       <Contact />
     </div>
   );
