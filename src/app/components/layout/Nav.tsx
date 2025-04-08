@@ -56,7 +56,7 @@ const Nav = () => {
     return (
         <nav className="fixed w-full top-0 z-50 flex justify-center py-4 px-6 text-white">
             {/* Desktop Navbar */}
-            <div className="hidden sm:flex items-center justify-center backdrop-blur-lg bg-black/55 border border-white/50 rounded-xl px-8 py-3.5">
+            <div className="hidden sm:flex items-center justify-center backdrop-blur-lg bg-black/55 border border-white/50 rounded-xl px-6.5 py-3.5">
                 <ul className="flex space-x-7">
                     {navLinks.map((link, index) => (
                         <li key={index}>

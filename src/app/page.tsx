@@ -1,7 +1,5 @@
 import Hero from "./components/Hero";
-import Footer from "./components/Footer";
 import Services from "./components/Services";
-import Nav from "./components/Nav";
 import Stack from "./components/Stack";
 import Contact from "./components/Contact";
 import RecentProjects from "./components/RecentProject";
@@ -13,7 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 export default function Home() {
   return (
     <div className="max-w-screen overflow-hidden">
-      <Nav />
+
       <Hero />
       <Services />
 
@@ -25,7 +23,7 @@ export default function Home() {
       
       <Contact />
       <ScrollToTop />
-      <Footer />
+
     </div>
   );
 }

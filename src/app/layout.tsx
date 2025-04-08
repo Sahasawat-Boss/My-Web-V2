@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./CSS/global.css";
 
-import MusicPlayer from "./components/details-comps/MusicPlayer";
+import MusicPlayer from "./components/layout/MusicPlayer";
+import Nav from "./components/layout/Nav";
+import Footer from "./components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -66,8 +68,9 @@ export default function RootLayout({
         {/* ✅ Main Content */}
 
         <MusicPlayer />
+        <Nav />
         <div className="relative z-10">{children}</div>
-
+        <Footer />
       </body>
     </html>
   );

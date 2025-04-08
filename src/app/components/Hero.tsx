@@ -87,7 +87,7 @@ const Hero = () => {
 
                     {/* ✅ Animated Contact Button with Scroll Function */}
                     <motion.button
-                        className="flex w-fit items-center gap-2 rounded-full px-6 py-2 lg:text-lg hover:cursor-pointer border border-gray-500 shadow-md hover:shadow-purple-400 transition-all glowing-button active:scale-70"
+                        className="flex w-fit items-center gap-2 rounded-full px-6 py-2 lg:text-lg hover:cursor-pointer border border-gray-500 shadow-md hover:shadow-purple-400 transition-all glowing-button active:scale-80"
                         whileTap={{ scale: 0.85 }}
                         onClick={handleScrollToProjects} // Calls the scroll function
                     >

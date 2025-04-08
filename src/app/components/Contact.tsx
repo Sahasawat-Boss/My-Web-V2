@@ -81,7 +81,7 @@ const Contact = () => {
                     >
                         <a
                             href="mailto:sahasawat.rk@gmail.com"
-                            className="flex w-fit items-center gap-2 rounded-xl px-5 py-2 lg:text-lg hover:cursor-pointer active:scale-70  hover:bg-white/15 border border-gray-500 shadow-md hover:shadow-purple-400 transition-all glowing-button"
+                            className="flex w-fit items-center gap-2 rounded-xl px-5 py-2 lg:text-lg hover:cursor-pointer active:scale-85  hover:bg-white/15 border border-gray-500 shadow-md hover:shadow-purple-400 transition-all glowing-button"
                         >
                             Send a Message
                             <IoIosSend/>
