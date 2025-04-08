@@ -33,7 +33,7 @@ const handleScrollToServices = () => {
 const FloatingTech = () => {
     return (
         <div
-            className="absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-2.5 md:space-x-3.5 hover110"
+            className="absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-2 md:space-x-3 hover"
             onClick={handleScrollToServices} // Scroll to #services when clicked
         >
             {techStack.map((tech, index) => (

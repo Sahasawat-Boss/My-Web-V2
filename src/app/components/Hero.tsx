@@ -77,7 +77,7 @@ const Hero = () => {
 
                     {/* Animated Subtitle */}
                     <motion.span
-                        className="mt-4 mb-14 rounded-xl bg-gray-600/50 text-center text-sm sm:text-base xl:text-lg px-3.5 py-1.5"
+                        className="mt-4 mb-14 rounded-full bg-white/15 text-center text-sm sm:text-base xl:text-lg px-6 py-1.5"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.6 }}
