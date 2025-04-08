@@ -3,14 +3,14 @@ import ResponsiveMockup from "./details-comps/ResponsiveMockup";
 
 import { FC, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { FaLaptopCode, FaCogs, FaDraftingCompass } from "react-icons/fa"; // Import icons
+import { FaLaptopCode, FaSearch , FaDraftingCompass } from "react-icons/fa"; // Import icons
 import { RiFlowChart } from "react-icons/ri";
 
 const servicesList = [
-    { id: "01", title: "Workflow Design", description: "Streamline business processes for efficiency and productivity.", icon: <RiFlowChart /> },
-    { id: "02", title: "Product Design & Prototyping", description: "Create interactive mockups to validate ideas before development.", icon: <FaDraftingCompass /> },
-    { id: "03", title: "Web Development", description: "Build fast, scalable web apps that align with your brand vision.", icon: <FaLaptopCode /> },
-    { id: "04", title: "AI-Powered Solutions", description: "Enhance business with AI-driven automation and chatbots.", icon: <FaCogs /> },
+    { id: "01", title: "Workflow Design", description: "Streamline business processes for efficiency and productivity.", icon: <RiFlowChart  size={26} /> },
+    { id: "02", title: "Product Design & Prototyping", description: "Create interactive mockups to validate ideas before development.", icon: <FaDraftingCompass  size={26} /> },
+    { id: "03", title: "Web Development", description: "Build fast, scalable web apps that align with your brand vision.", icon: <FaLaptopCode  size={26} /> },
+    { id: "04", title: "SEO Optimization", description: "Boost your website traffic and visibility with proven SEO strategies.", icon: <FaSearch  size={24} /> }
 ];
 
 const Services: FC = () => {
