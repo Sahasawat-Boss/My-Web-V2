@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./CSS/global.css";
+import "./CSS/TW@apply.css"
 
+//Comps
 import MusicPlayer from "./components/layout/MusicPlayer";
 import Nav from "./components/layout/Nav";
 import Footer from "./components/layout/Footer";
+import ScrollToTop from "./components/details-comps/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,6 +74,7 @@ export default function RootLayout({
         <Nav />
         <div className="relative z-10">{children}</div>
         <Footer />
+        <ScrollToTop/>
       </body>
     </html>
   );

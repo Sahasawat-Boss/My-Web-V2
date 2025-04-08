@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
-import RecentProjects from "./RecentProject";
-import Port from "./Port";
+import RecentProjects from "../RecentProject";
+import Port from "../Port";
 
-export default function SelectCat() {
-    const [category, setCategory] = useState<"all" | "landing" | "webapp">("all");
+export default function SelectProject() {
+    const [category, setCategory] = useState<"all" | "landing" | "web-app">("all");
 
     return (
         <div className="text-center my-10">
@@ -13,7 +13,7 @@ export default function SelectCat() {
                 {[
                     { label: "All", value: "all" },
                     { label: "Landing Page", value: "landing" },
-                    { label: "Web-App", value: "webapp" },
+                    { label: "Web-App", value: "web-app" },
                 ].map(({ label, value }) => (
                     <button
                         key={value}
@@ -21,7 +21,7 @@ export default function SelectCat() {
                                 ? "bg-blue-800 text-white"
                                 : "bg-gray-200 text-gray-800"
                             }`}
-                        onClick={() => setCategory(value as "all" | "landing" | "webapp")}
+                        onClick={() => setCategory(value as "all" | "landing" | "web-app")}
                     >
                         {label}
                     </button>
@@ -37,7 +37,7 @@ export default function SelectCat() {
                     </>
                 )}
                 {category === "landing" && <RecentProjects />}
-                {category === "webapp" && <Port />}
+                {category === "web-app" && <Port />}
             </div>
         </div>
     );
