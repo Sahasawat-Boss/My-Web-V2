@@ -17,18 +17,20 @@ const Contact = () => {
         >
             <div className="flex flex-col justify-center items-center text-center">
                 {/* Title */}
-                <motion.h2
-                    className="text-2xl sm:text-3xl font-bold mb-6"
+                <motion.div
+                    className="mb-6"
                     initial={{ opacity: 0, y: -50 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <span className="gradient-text-gray mr-1">Let's</span>
-                    <span className="gradient-text-purple">Connect</span>
-                    <p className="text-gray-400 text-base mb-2 tracking-wide">
-                        Reach out for collaborations, inquiries, or just to say hello!
+                    <h2 className="text-2xl sm:text-3xl font-bold">
+                        <span className="gradient-text-gray mr-1">Let's</span>
+                        <span className="gradient-text-purple">Connect</span>
+                    </h2>
+                    <p className="text-white/75 text-sm md:text-base md:w-xl mt-2 tracking-wide">
+                        Reach out for collaborations, project inquiries, or just to say hello. I'm always open to connecting with fellow developers and creative thinkers.
                     </p>
-                </motion.h2>
+                </motion.div>
 
 
                 {/* Contact Box */}
@@ -42,7 +44,7 @@ const Contact = () => {
                     <div className="mb-6">
                         <p className="text-left text-purple-400/90">GitHub</p>
                         <a
-                            href="https://github.com/Sahasawat-Boss "
+                            href="https://github.com/Sahasawat-Boss" rel="noopener noreferrer"
                             target="_blank"
                             className="flex items-center justify-left text- gap-2 hover:text-blue-400 transition-all hover"
                         >
@@ -84,13 +86,13 @@ const Contact = () => {
                             className="flex w-fit items-center gap-2 rounded-xl px-5 py-2 lg:text-lg hover:cursor-pointer active:scale-85  hover:bg-white/15 border border-gray-500 shadow-md hover:shadow-purple-400 transition-all glowing-button"
                         >
                             Send a Message
-                            <IoIosSend/>
+                            <IoIosSend />
                         </a>
 
                     </motion.div>
                 </motion.div>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 };
 
