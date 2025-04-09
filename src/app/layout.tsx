@@ -62,6 +62,32 @@ export default function RootLayout({
         <meta property="og:site_name" content="BossBSynth | Developer Portfolio" />
         <meta property="og:image" content="https://boss-website-v2.vercel.app/preview.png" />
         <meta property="og:type" content="website" />
+        
+        {/* ✅ JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Sahasawat Ruenkaew",
+              alternateName: "Boss",
+              url: "https://bossbsynth.com",
+              image: "https://boss-website-v2.vercel.app/preview.png",
+              jobTitle: "Full-Stack Web Developer",
+              worksFor: {
+                "@type": "Organization",
+                name: "BSynth",
+                url: "https://bossbsynth.com"
+              },
+              sameAs: [
+                "https://github.com/Sahasawat-Boss",
+                "mailto:sahasawat.rk@gmail.com",
+                "tel:+66868684466"
+              ]
+            }),
+          }}
+        />
       </head>
 
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
@@ -74,7 +100,7 @@ export default function RootLayout({
         <Nav />
         <div className="relative z-10">{children}</div>
         <Footer />
-        <ScrollToTop/>
+        <ScrollToTop />
       </body>
     </html>
   );
