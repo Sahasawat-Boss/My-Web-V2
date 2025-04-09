@@ -19,8 +19,10 @@ const ShowcaseProject = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <span className="gradient-text-gray"><span className="text-4xl md:text-[43px] ">Projects</span> fueled by {" "}</span>
-                <span className="gradient-text-purple">passion and skill</span>
+                <div className="px-14">
+                    <span className="gradient-text-gray"><span className="text-4xl md:text-[43px] ">Projects</span> fueled by {" "}</span>
+                    <span className="gradient-text-purple">passion and skill</span>
+                </div>
             </motion.h2>
 
             {/* Underline Animation */}
@@ -31,7 +33,7 @@ const ShowcaseProject = () => {
                 transition={{ duration: 1, delay: 0.15, ease: "easeOut" }}
             />
 
-            <SelectProject/>
+            <SelectProject />
         </section>
     );
 };

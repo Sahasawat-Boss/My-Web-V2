@@ -7,7 +7,7 @@ import "./CSS/TW@apply.css"
 import MusicPlayer from "./components/layout/MusicPlayer";
 import Nav from "./components/layout/Nav";
 import Footer from "./components/layout/Footer";
-import ScrollToTop from "./components/details-comps/ScrollToTop";
+import ScrollToTop from "./components/layout/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

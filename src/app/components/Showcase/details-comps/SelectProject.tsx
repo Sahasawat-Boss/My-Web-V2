@@ -40,7 +40,7 @@ export default function SelectProject() {
             </motion.div>
 
             {/* Display Section */}
-            <div className="max-w-6xl mx-auto px-4">
+            <div>
                 {category === "all" && <RecentProjects />}
                 {category === "landing" && <LandingPage />}
                 {category === "web-app" && <WebAppProjects />}
