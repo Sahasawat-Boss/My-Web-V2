@@ -30,7 +30,7 @@ export default function SelectProject() {
                 ].map(({ label, value }) => (
                     <button
                         key={value}
-                        className={`px-4.5 py-1.5 rounded-full duration-200 lg:text-lg hover border border-gray-500 shadow-lg hover:shadow-purple-400/50 bg-gradient-to-r from-purple-500 to-indigo-500 transition-all ${category === value ? "text-white" : "bg-none text-white/50"
+                        className={`px-4.5 py-1.5 rounded-full duration-200 lg:text-lg hover border border-gray-500/50 shadow-lg hover:shadow-purple-400/50 bg-gradient-to-r from-purple-500 to-indigo-500 transition-all scale-95 ${category === value ? "text-white scale-105" : "bg-none text-white/50"
                             }`}
                         onClick={() => setCategory(value as "all" | "landing" | "web-app")}
                     >

@@ -14,12 +14,12 @@ const ShowcaseProject = () => {
             id="Project"
             ref={ref} className="pt-24 pb-10 flex flex-col items-center bg-black/35">
             <motion.h2
-                className="text-3xl md:text-4xl font-bold text-white  text-center"
+                className="text-3xl md:text-4xl font-bold text-white text-center"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <div className="px-14">
+                <div className="px-11">
                     <span className="gradient-text-gray"><span className="text-4xl md:text-[43px] ">Projects</span> fueled by {" "}</span>
                     <span className="gradient-text-purple">passion and skill</span>
                 </div>
