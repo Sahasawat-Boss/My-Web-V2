@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 
 const fadeInLeft = {
-    hidden: { opacity: 0, x: -80, y: 45 }, // Moves from left & slightly below
+    hidden: { opacity: 0, x: -80, y: 15 }, // Moves from left & slightly below (- for Above)
     visible: {
         opacity: 1, x: 0, y: 0,
         transition: { duration: 1, ease: "easeOut" }
@@ -13,7 +13,7 @@ const fadeInLeft = {
 };
 
 const fadeInRight = {
-    hidden: { opacity: 0, x: 80, y: 45 }, // Moves from right & slightly above
+    hidden: { opacity: 0, x: 80, y: 15 }, // Moves from right & slightly below (- for Above)
     visible: {
         opacity: 1, x: 0, y: 0,
         transition: { duration: 1, ease: "easeOut" }

@@ -3,11 +3,11 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import RecentProjects from "./RecentProject";
-import LandingPage from "./LandingPage";
 import WebAppProjects from "./WebAppProjects";
+import MarketingPage from "./MarketingPage";
 
 export default function SelectProject() {
-    const [category, setCategory] = useState<"recent" | "landing" | "web-app">("recent");
+    const [category, setCategory] = useState<"recent" | "Marketing Pages" | "web-app">("recent");
 
     // 👁️ Button animation trigger
     const buttonRef = useRef(null);
@@ -25,14 +25,14 @@ export default function SelectProject() {
             >
                 {[
                     { label: "Recent", value: "recent" },
-                    { label: "Landing Page", value: "landing" },
+                    { label: "Marketing Pages", value: "Marketing Pages" },
                     { label: "Web-App", value: "web-app" },
                 ].map(({ label, value }) => (
                     <button
                         key={value}
                         className={`px-4.5 py-1.5 rounded-full duration-200 lg:text-lg hover border border-gray-500/50 shadow-lg hover:shadow-purple-400/50 bg-gradient-to-r from-purple-500 to-indigo-500 transition-all scale-95 ${category === value ? "text-white scale-105" : "bg-none text-white/50"
                             }`}
-                        onClick={() => setCategory(value as "recent" | "landing" | "web-app")}
+                        onClick={() => setCategory(value as "recent" | "Marketing Pages" | "web-app")}
                     >
                         {label}
                     </button>
@@ -42,7 +42,7 @@ export default function SelectProject() {
             {/* Display Section */}
             <div>
                 {category === "recent" && <RecentProjects />}
-                {category === "landing" && <LandingPage />}
+                {category === "Marketing Pages" && <MarketingPage />}
                 {category === "web-app" && <WebAppProjects />}
             </div>
         </div>
