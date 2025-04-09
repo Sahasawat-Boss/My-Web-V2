@@ -1,9 +1,12 @@
 "use client";
 
+import "../CSS/Experience.css";
+
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaBusinessTime, FaLaptopCode } from "react-icons/fa";
-import "../CSS/Experience.css";
+
+
 
 // Define the type for an experience item
 interface ExperienceItem {
