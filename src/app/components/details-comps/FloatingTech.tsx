@@ -10,7 +10,7 @@ const techStack = [
     { name: "React", icon: <FaReact size={20} />, color: "text-blue-400" },
     { name: "Tailwind", icon: <SiTailwindcss size={22} />, color: "text-teal-400" },
     { name: "Vue.js", icon: <FaVuejs size={20} />, color: "text-green-400" },
-    { name: "Nuxt.js", icon: <SiNuxtdotjs size={22} />, color: "text-green-300" },
+    { name: "Nuxt.js", icon: <SiNuxtdotjs size={22} />, color: "text-green-400" },
     { name: "Prisma", icon: <SiPrisma size={22} />, color: "text-indigo-400" },
     { name: "SQL", icon: <GrMysql size={20} />, color: "text-yellow-300" },
     { name: "Database", icon: <FaDatabase size={20} />, color: "text-yellow-400" },
@@ -33,7 +33,7 @@ const handleScrollToServices = () => {
 const FloatingTech = () => {
     return (
         <div
-            className="absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-2 md:space-x-3 hover"
+            className="absolute bottom-7 md:bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-2 md:space-x-3 scale-85"
             onClick={handleScrollToServices} // Scroll to #services when clicked
         >
             {techStack.map((tech, index) => (
@@ -44,7 +44,7 @@ const FloatingTech = () => {
                         y: [-16, 16, -16], // Floating effect up/down/starting position(and loop)
                     }}
                     transition={{
-                        duration: 2.8 + index * 0.4, // Asynchronous floating times base + index + delay
+                        duration: 2.85 + index * 0.4, // Asynchronous floating times base + index + delay
                         repeat: Infinity,
                         repeatType: "reverse",
                     }}

@@ -38,14 +38,15 @@ const Hero = () => {
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <div className="flex flex-col gap-2 justify-center items-center hover">
+                        <h1 className="text-center">
                             <span className="text-gray-200/55 text-xl md:text-2xl xl:text-3xl font-semibold tracking-wider">
                                 Transform Visions into
                             </span>
+                            <br />
                             <span className="gradient-text-purple text-3xl md:text-4xl xl:text-5xl font-semibold tracking-wider">
                                 Digital Experiences
                             </span>
-                        </div>
+                        </h1>
                     </motion.div>
 
                     {/* Animated Profile Picture */}
@@ -61,7 +62,7 @@ const Hero = () => {
                                 <Image
                                     className="w-40 h-40 md:h-48 md:w-48 xl:h-52 xl:w-52 object-cover rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-5 "
                                     src="/Images/Profiles/profile-pic.jpg"
-                                    alt="profile pic"
+                                    alt="Sahasawat Ruenkaew (Boss) - Full-Stack Developer Profile Picture"
                                     width={150}
                                     height={150}
                                 />
@@ -76,18 +77,20 @@ const Hero = () => {
                     </motion.div>
 
                     {/* Animated Subtitle */}
-                    <motion.span
-                        className="mt-6.5 mb-14 rounded-full bg-white/15 text-center text-sm sm:text-base xl:text-lg px-6 py-1.5"
+                    <motion.p
+                        className="mt-6.5 mb-8 rounded-2xl bg-white/15 text-center text-sm sm:text-base xl:text-lg px-6 py-2.5 w-fit max-w-lg"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.6 }}
                     >
-                        Hi, I&apos;m Boss - Developer based in Thailand.
-                    </motion.span>
+                        Hi, I&apos;m <strong>Boss</strong>, a developer based in Chiang Mai, Thailand.
+                        I build modern websites and digital solutions under the name <strong>BossBSynth</strong>.
+                    </motion.p>
+
 
                     {/* ✅ Animated Contact Button with Scroll Function */}
                     <motion.button
-                        className="flex w-fit items-center gap-2 rounded-full px-6 py-2 lg:text-lg hover:cursor-pointer border border-gray-500 shadow-md hover:shadow-purple-400 transition-all glowing-button active:scale-80"
+                        className="flex w-fit items-center gap-2 rounded-full px-6 py-2 lg:text-lg border border-gray-500 shadow-md hover:shadow-purple-400 transition-all glowing-button hover active:scale-75"
                         whileTap={{ scale: 0.85 }}
                         onClick={handleScrollToProjects} // Calls the scroll function
                     >

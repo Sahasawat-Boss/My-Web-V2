@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Sahasawat Ruenkaew | Web Developer | BossBSynth",
-  description: "Portfolio of Sahasawat Ruenkaew (Boss), a web developer based in Chiang Mai. Explore modern web apps, skills, and tech stack.",
+  description: "BossBSynth is the personal website of Sahasawat Ruenkaew (Boss), a web developer based in Chiang Mai. Discover modern web applications, projects, development skills, and tech expertise.",
   keywords: "Sahasawat Ruenkaew, BossBSynth, Developer, Web Developer Chiang Mai, Next.js, React, Portfolio, Node.js, TypeScript",
   openGraph: {
     title: "Sahasawat Ruenkaew | Web Developer | BossBSynth",
