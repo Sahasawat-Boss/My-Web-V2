@@ -31,7 +31,7 @@ const RecentProjects = () => {
             ref={ref} className="pt-2 px-6 flex flex-col items-center bg-black/35">
 
             {/* Responsive Grid Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-5 w-fit">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-1 lg:gap-3 w-fit">
 
 
                 {/* Right Side (Fades in from Right) */}

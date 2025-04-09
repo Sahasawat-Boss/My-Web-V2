@@ -31,7 +31,7 @@ const LandingPage = () => {
             ref={ref} className="pt-2 px-6 flex flex-col items-center bg-black/35">
 
             {/* Responsive Grid Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-2  gap-x-10 gap-y-5 w-fit"> {/*  xl:grid-cols-3  */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-1 lg:gap-3  w-fit"> {/*  xl:grid-cols-3  */}
 
 
                 {/* Right Side (Fades in from Right) */}
