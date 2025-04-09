@@ -2,34 +2,17 @@
 
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import ProjectCard from "./details-comps/ProjectCard";
 import SelectProject from "./details-comps/SelectProject";
-
-const fadeInLeft = {
-    hidden: { opacity: 0, x: -80, y: 45 }, // Moves from left & slightly below
-    visible: {
-        opacity: 1, x: 0, y: 0,
-        transition: { duration: 1, ease: "easeOut" }
-    }
-};
-
-const fadeInRight = {
-    hidden: { opacity: 0, x: 80, y: 45 }, // Moves from right & slightly above
-    visible: {
-        opacity: 1, x: 0, y: 0,
-        transition: { duration: 1, ease: "easeOut" }
-    }
-};
 
 
 const ShowcaseProject = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.15 }); // Trigger when 15% is in view
+    const isInView = useInView(ref, { amount: 0.08 }); // Trigger when 8% is in view
 
     return (
         <section
             id="Project"
-            ref={ref} className="pt-24 pb-10 px-6 flex flex-col items-center bg-black/35">
+            ref={ref} className="pt-24 pb-10 flex flex-col items-center bg-black/35">
             <motion.h2
                 className="text-3xl md:text-4xl font-bold text-white  text-center"
                 initial={{ opacity: 0, y: 30 }}

@@ -55,7 +55,7 @@ const Hero = () => {
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
                         {/* Profile Picture with Hover Effect */}
-                        <div className="relative mt-8 rounded-full overflow-hidden group shadow-lg hover:shadow-purple-400 hover">
+                        <div className="relative mt-8 rounded-full overflow-hidden group shadow-lg hover:shadow-purple-400/60 hover">
                             <a href="https://github.com/Sahasawat-Boss" target="_blank" rel="noopener noreferrer">
                                 {/* Profile Image */}
                                 <Image
@@ -77,7 +77,7 @@ const Hero = () => {
 
                     {/* Animated Subtitle */}
                     <motion.span
-                        className="mt-4 mb-14 rounded-full bg-white/15 text-center text-sm sm:text-base xl:text-lg px-6 py-1.5"
+                        className="mt-6.5 mb-14 rounded-full bg-white/15 text-center text-sm sm:text-base xl:text-lg px-6 py-1.5"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.6 }}
