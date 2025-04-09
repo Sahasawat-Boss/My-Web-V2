@@ -12,7 +12,7 @@ const ShowcaseProject = () => {
     return (
         <section
             id="Project"
-            ref={ref} className="pt-24 pb-10 flex flex-col items-center bg-black/35">
+            ref={ref} className="pt-20 sm:pt-24 pb-10 flex flex-col items-center bg-black/35">
             <motion.h2
                 className="text-3xl md:text-4xl font-bold text-white text-center"
                 initial={{ opacity: 0, y: 30 }}

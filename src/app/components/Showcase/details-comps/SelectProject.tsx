@@ -7,7 +7,7 @@ import LandingPage from "./LandingPage";
 import WebAppProjects from "./WebAppProjects";
 
 export default function SelectProject() {
-    const [category, setCategory] = useState<"all" | "landing" | "web-app">("all");
+    const [category, setCategory] = useState<"recent" | "landing" | "web-app">("recent");
 
     // 👁️ Button animation trigger
     const buttonRef = useRef(null);
@@ -24,7 +24,7 @@ export default function SelectProject() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
             >
                 {[
-                    { label: "All", value: "all" },
+                    { label: "Recent", value: "recent" },
                     { label: "Landing Page", value: "landing" },
                     { label: "Web-App", value: "web-app" },
                 ].map(({ label, value }) => (
@@ -32,7 +32,7 @@ export default function SelectProject() {
                         key={value}
                         className={`px-4.5 py-1.5 rounded-full duration-200 lg:text-lg hover border border-gray-500/50 shadow-lg hover:shadow-purple-400/50 bg-gradient-to-r from-purple-500 to-indigo-500 transition-all scale-95 ${category === value ? "text-white scale-105" : "bg-none text-white/50"
                             }`}
-                        onClick={() => setCategory(value as "all" | "landing" | "web-app")}
+                        onClick={() => setCategory(value as "recent" | "landing" | "web-app")}
                     >
                         {label}
                     </button>
@@ -41,7 +41,7 @@ export default function SelectProject() {
 
             {/* Display Section */}
             <div>
-                {category === "all" && <RecentProjects />}
+                {category === "recent" && <RecentProjects />}
                 {category === "landing" && <LandingPage />}
                 {category === "web-app" && <WebAppProjects />}
             </div>

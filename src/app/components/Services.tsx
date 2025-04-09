@@ -18,7 +18,7 @@ const Services: FC = () => {
     const isInView = useInView(ref, { amount: 0.3, once: false });
 
     return (
-        <section id="services" className="text-white pt-24 px-12 mx-auto max-w-3xl" ref={ref}>
+        <section id="services" className="text-white pt-22 sm:pt-24 px-12 mx-auto max-w-3xl" ref={ref}>
             <div className="max-w-3xl mx-auto">
 
                 {/* Section Title with Scroll Animation */}

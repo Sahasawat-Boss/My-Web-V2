@@ -7,6 +7,7 @@ import { FaLocationArrow } from "react-icons/fa";
 
 //details-comps
 import FloatingTech from "./details-comps/FloatingTech";
+import FloatingIconsBehindImage from "./details-comps/FloatingIconsBehindImage";
 
 const Hero = () => {
     // 🔹 Detect when this section is in view
@@ -56,24 +57,29 @@ const Hero = () => {
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
                         {/* Profile Picture with Hover Effect */}
-                        <div className="relative mt-8 rounded-full overflow-hidden group shadow-lg hover:shadow-purple-400/60 hover">
-                            <a href="https://github.com/Sahasawat-Boss" target="_blank" rel="noopener noreferrer">
-                                {/* Profile Image */}
-                                <Image
-                                    className="w-40 h-40 md:h-48 md:w-48 xl:h-52 xl:w-52 object-cover rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-5 "
-                                    src="/Images/Profiles/profile-pic.jpg"
-                                    alt="Sahasawat Ruenkaew (Boss) - Full-Stack Developer Profile Picture"
-                                    width={150}
-                                    height={150}
-                                />
-                                {/* Hover Overlay */}
-                                <div className="absolute inset-0 flex items-center justify-center rounded-full bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                                    <span className="text-white text-center font-semibold text-sm sm:text-lg">
-                                        View My GitHub
-                                    </span>
-                                </div>
-                            </a>
+                        <div className="relative mt-8 w-fit">
+                            {/* 🎯 Floating icons positioned behind the image */}
+                            <FloatingIconsBehindImage />
+
+                            <div className="relative z-10 rounded-full overflow-hidden group shadow-lg hover:shadow-purple-400/60">
+                                <a href="https://github.com/Sahasawat-Boss" target="_blank" rel="noopener noreferrer">
+                                    <Image
+                                        className="w-40 h-40 md:h-48 md:w-48 xl:h-52 xl:w-52 object-cover rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-5"
+                                        src="/Images/Profiles/profile-pic.jpg"
+                                        alt="Sahasawat Ruenkaew (Boss) - Full-Stack Developer Profile Picture"
+                                        width={150}
+                                        height={150}
+                                    />
+                                    {/* Hover Overlay */}
+                                    <div className="absolute inset-0 flex items-center justify-center rounded-full bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                        <span className="text-white text-center font-semibold text-sm sm:text-lg">
+                                            View My GitHub
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
+
                     </motion.div>
 
                     {/* Animated Subtitle */}
