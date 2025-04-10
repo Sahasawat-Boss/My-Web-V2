@@ -10,7 +10,7 @@ const socialLinks = [
 const Footer = () => {
     return (
         <motion.footer
-            className="py-8 mx-auto px-4 text-center"
+            className="pt-8 md:pb-20 mx-auto px-4 text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}

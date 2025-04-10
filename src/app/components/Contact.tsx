@@ -13,7 +13,7 @@ const Contact = () => {
         <section
             id="Contact"
             ref={ref}
-            className="w-full bg-gradient-to-b  from-black/5 via-gray-900/80 to-black/5 text-white py-16 px-8 lg:px-24"
+            className="w-full bg-gradient-to-b  from-black/5 via-gray-900/80 to-black/5 text-white pt-22 pb-12 md:pt-24 px-8 lg:px-24"
         >
             <div className="flex flex-col justify-center items-center text-center">
                 {/* Title */}
