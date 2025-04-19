@@ -33,9 +33,9 @@ const WebAppProjects = () => {
             {/* Responsive Grid Layout */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-1 lg:gap-3  w-fit">   {/*  xl:grid-cols-3  */}
 
-                {/* Left Side (Fades in from Left) */}
+                {/* Right Side (Fades in from Right) */}
                 <motion.div
-                    variants={fadeInLeft}
+                    variants={fadeInRight}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
@@ -45,6 +45,21 @@ const WebAppProjects = () => {
                         imageSrc="/RecentProject/SS.png"
                         liveLink="https://soulscroll-bossbsynth.netlify.app/"
                         techIcons={["Nuxt", "Tailwind", "JavaScript"]}
+                    />
+                </motion.div>
+
+                {/* Left Side (Fades in from Left) */}
+                <motion.div
+                    variants={fadeInLeft}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                >
+                    <ProjectCard
+                        title="Nuxi-Recipes"
+                        description="A modern and beginner-friendly recipe app built with Nuxt 3, using the latest v4 file structure and best practices."
+                        imageSrc="/RecentProject/nuxi-recipes.png"
+                        liveLink="https://nuxi-recipes-demo.netlify.app/"
+                        techIcons={["Nuxt", "Tailwind", "TypeScript"]}
                     />
                 </motion.div>
 
@@ -78,6 +93,7 @@ const WebAppProjects = () => {
                     />
                 </motion.div>
 
+                {/* Left Side (Fades in from Left) */}
                 <motion.div
                     variants={fadeInLeft}
                     initial="hidden"

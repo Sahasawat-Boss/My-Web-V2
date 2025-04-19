@@ -34,9 +34,9 @@ const RecentProjects = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-1 lg:gap-3 w-fit">
 
 
-                {/* Right Side (Fades in from Right) */}
+                {/* Left Side (Fades in from Left) */}
                 <motion.div
-                    variants={fadeInRight}
+                    variants={fadeInLeft}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
@@ -46,6 +46,21 @@ const RecentProjects = () => {
                         imageSrc="/RecentProject/DD.png"
                         liveLink="https://daily-drip-coffee-cafe.vercel.app/"
                         techIcons={["Nextjs", "Tailwind", "TypeScript"]}
+                    />
+                </motion.div>
+
+                {/* Right Side (Fades in from Right) */}
+                <motion.div
+                    variants={fadeInRight}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                >
+                    <ProjectCard
+                        title="Nuxi-Recipes"
+                        description="A modern and beginner-friendly recipe app built with Nuxt 3, using the latest v4 file structure and best practices."
+                        imageSrc="/RecentProject/nuxi-recipes.png"
+                        liveLink="https://nuxi-recipes-demo.netlify.app/"
+                        techIcons={["Nuxt", "Tailwind", "TypeScript"]}
                     />
                 </motion.div>
 
@@ -76,36 +91,6 @@ const RecentProjects = () => {
                         imageSrc="/RecentProject/vf.png"
                         liveLink="https://vueflix-demo.netlify.app/"
                         techIcons={["Vue", "Tailwind", "JavaScript",]}
-                    />
-                </motion.div>
-
-                {/* Left Side (Fades in from Left) */}
-                <motion.div
-                    variants={fadeInLeft}
-                    initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
-                >
-                    <ProjectCard
-                        title="PureSmile Clinic"
-                        description="A modern, easy-to-use, and fully responsive dental clinic website with simple booking and all the info patients need."
-                        imageSrc="/RecentProject/puresmile/psm.png"
-                        liveLink="https://puresmile-clinic-bsynth-demo.vercel.app/"
-                        techIcons={["React", "Tailwind", "TypeScript"]}
-                    />
-                </motion.div>
-
-                {/* Right Side (Fades in from Right) */}
-                <motion.div
-                    variants={fadeInRight}
-                    initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
-                >
-                    <ProjectCard
-                        title="BSlip-Checker"
-                        description="BSlip Checker verifies transaction details from Thai bank transfer slips by comparing uploaded slips with actual bank transaction records."
-                        imageSrc="/RecentProject/bslip/bslip3.png"
-                        liveLink="https://www.youtube.com/shorts/ylGrFObM-uw"
-                        techIcons={["Nextjs", "Tailwind", "TypeScript", "API",]}
                     />
                 </motion.div>
 

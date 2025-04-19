@@ -15,7 +15,7 @@ export default function FeatureProject() {
         "/Images/project/Sone3.png", "/Images/project/Sone.png", "/Images/mocks/mock1.png", "/Images/mocks/mock2.png",
         "/Images/project/EC02.png", "/Images/project/aichat2.png", "/Images/project/PIR/pir2.png", "/Images/project/PIR/pir4.png",
         "/Images/project/aisum3.png"
-        , "/Images/project/bp1.png", "/Images/project/bp2.png", "/Images/project/Store1.png","/Images/project/BF1.png", "/Images/project/scrollgall.png"
+        , "/Images/project/bp1.png", "/Images/project/bp2.png", "/Images/project/Store1.png", "/Images/project/BF1.png", "/Images/project/scrollgall.png"
     ];
 
     const openModal = (imageSrc: string) => {
@@ -75,8 +75,8 @@ export default function FeatureProject() {
                 <h3
                     className="gradient-text-gray font-semibold tracking-wider transition-all duration-500 ease-in-out"
                 >
-                    <span className="text-2xl md:text-3xl">Featured </span>
-                    <span className="text-3xl md:text-4xl "> Projects</span>
+                    <span className="text-2xl md:text-3xl">More Project </span>
+                    <span className="text-3xl md:text-4xl ">I've Built</span>
                 </h3>
             </motion.div>
 
